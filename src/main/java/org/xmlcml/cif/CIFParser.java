@@ -1,10 +1,6 @@
 package org.xmlcml.cif;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -307,16 +303,16 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	}
 
 	/**
-	 * Parse a buffered reader. Closes the reader once the
-	 * parsing has finished.
+	 * Parse a reader. Closes the reader once the parsing has finished.
 	 * 
-	 * @param bufferedReader
+	 * @param reader
 	 * @throws CIFException
 	 * @throws IOException
 	 * @return document
 	 */
-	public Document parse(BufferedReader bufferedReader) throws CIFException,
+	public Document parse(Reader reader) throws CIFException,
 	IOException {
+        BufferedReader bufferedReader = new BufferedReader(reader);
 		Document document = null;
 		try {
 			// read into buffer so we can do some heuristics
