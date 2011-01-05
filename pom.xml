@@ -15,6 +15,12 @@
     <name>CIFXOM</name>
 	<url>http://www.xml-cml.org/</url>
 
+    <developers>
+        <developer>
+            <name>Nick Day</name>
+        </developer>
+    </developers>
+
     <repositories>
         <repository>
             <id>ucc-repo</id>
