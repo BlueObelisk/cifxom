@@ -1,0 +1,107 @@
+                                             
+data_global
+_journal_date_accepted     2002-03-27
+_journal_year     2002
+_publ_contact_author_name     'Dr Lough, Alan J.'
+_publ_contact_author_address
+;
+Department of Chemistry
+University of Toronto
+Toronto
+Ontario
+Canada M5S 3H6
+;
+_publ_contact_author_email     alough@chem.utoronto.ca
+_publ_contact_author_fax     '416 978 8775'
+loop_
+    _publ_author_name
+    _publ_author_address
+    'Kresge, A. J.'
+;
+Department of Chemistry
+University of Toronto
+Toronto
+Ontario
+Canada M5S 3H6
+;
+    'Lough, Alan J.'
+;
+Department of Chemistry
+University of Toronto
+Toronto
+Ontario
+Canada M5S 3H6
+;
+    'Meng, Q.'
+;
+Department of Chemistry
+University of Toronto
+Toronto
+Ontario
+Canada M5S 3H6
+;
+data_7
+_chemical_name_systematic
+;
+2,3-Dihydro-2-hydroxybenzo[b]furan-3-one
+;
+_chemical_name_common     ?
+_chemical_formula_moiety     'C8 H6 O3'
+_chemical_formula_sum     'C8 H6 O3'
+_chemical_formula_iupac     'C8 H6 O3'
+_chemical_formula_weight     150.13
+_chemical_melting_point     ?
+_symmetry_cell_setting     Orthorhombic
+_symmetry_space_group_name_H-M     'P b c a'
+_symmetry_space_group_name_Hall     '-P 2ac 2ab'
+loop_
+    _symmetry_equiv_pos_as_xyz
+    'x, y, z'
+    '-x+1/2, -y, z+1/2'
+    '-x, y+1/2, -z+1/2'
+    'x+1/2, -y+1/2, -z'
+    '-x, -y, -z'
+    'x-1/2, y, -z-1/2'
+    'x, -y-1/2, z-1/2'
+    '-x-1/2, y-1/2, z'
+_cell_length_a     11.0278(2)
+_cell_length_b     7.7486(5)
+_cell_length_c     15.7861(7)
+_cell_angle_alpha     90.00
+_cell_angle_beta     90.00
+_cell_angle_gamma     90.00
+_cell_volume     1348.92(11)
+_cell_formula_units_Z     8
+_cell_measurement_reflns_used     7696
+loop_
+    _atom_type_symbol
+    _atom_type_description
+    _atom_type_scat_dispersion_real
+    _atom_type_scat_dispersion_imag
+    _atom_type_scat_source
+    'C' 'C' 0.0033 0.0016
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+    'H' 'H' 0.0000 0.0000
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+    'O' 'O' 0.0106 0.0060
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+_computing_publication_material     'SHELXTL'
+loop_
+    _atom_site_label
+    _atom_site_fract_x
+    _atom_site_fract_y
+    _atom_site_fract_z
+    _atom_site_U_iso_or_equiv
+    _atom_site_adp_type
+    _atom_site_calc_flag
+    _atom_site_refinement_flags
+    _atom_site_occupancy
+    _atom_site_disorder_assembly
+    _atom_site_disorder_group
+    _atom_site_type_symbol
+    O1 0.66766(9) 0.02384(12) 0.19807(6) 0.0315(3) Uani d . 1 . . O
+    H1O 0.598(2) -0.040(3) 0.2175(14) 0.074(7) Uiso d . 1 . . H
+    O2 0.52169(9) 0.33077(13) 0.24733(6) 0.0338(3) Uani d . 1 . . O
+    O3 0.74606(8) 0.05520(12) 0.33464(6) 0.0292(3) Uani d . 1 . . O
+    C1 0.69647(11) 0.14080(17) 0.25995(8) 0.0261(3) Uani d . 1 . . C
+

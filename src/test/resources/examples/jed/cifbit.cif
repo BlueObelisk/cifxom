@@ -1,0 +1,19 @@
+data_cifbit 
+
+ 
+_diffrn_radiation_wavelength      0.71073 
+_diffrn_radiation_type            MoK\a 
+_diffrn_radiation_source          'fine-focus sealed tube'
+_diffrn_measurement_device_type   'Nonius Kappa CCD'
+_diffrn_measurement_method        'Thin slice \w and \f scans'
+ 
+_computing_data_collection        'Collect (Nonius B.V. 1998)'
+_computing_cell_refinement        'HKL Scalepack (Otwinowski & Minor 1997)' 
+_computing_data_reduction
+;
+ HKL Denzo and Scalepack (Otwinowski & Minor 1997)
+;
+_computing_structure_solution     'SIR-92 (Altomare et al. 1994)'
+_computing_structure_refinement   'SHELXL-97 (Sheldrick 1997)' 
+_computing_publication_material   'SHELXL-97 (Sheldrick 1997)' 
+ 

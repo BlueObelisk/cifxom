@@ -1,0 +1,313 @@
+data_global
+_audit_creation_method SHELXL-97
+_journal_date_recd_electronic 2006-10-09
+_journal_date_accepted 2006-10-12
+_journal_name_full 'Acta Crystallographica, Section E'
+_journal_year 2006
+_journal_volume 62
+_journal_issue 11
+_journal_page_first o5106
+_journal_page_last o5107
+_journal_paper_category EO
+_journal_coeditor_code CI2194
+_publ_contact_author_name 'Dr Wang, Zhiguo'
+_publ_contact_author_address
+
+; Key Laboratory of Pesticide and Chemical Biology of Ministry of Education
+  College of Chemistry
+  Central China Normal University
+  Wuhan  430079
+  China
+;
+_publ_contact_author_email chwangzg@yahoo.com.cn
+_publ_contact_author_fax '86 27 67867955'
+_publ_contact_author_phone '86 27 67867129'
+_publ_section_title 
+;
+1,2,4,5-Tetrakis(bromomethyl)benzene
+;
+loop_
+_publ_author_name
+_publ_author_footnote
+_publ_author_address
+'Wang, Zhi-Guo' .
+; Key Laboratory of Pesticides and Chemical Biology
+  Ministry of Education
+  College of Chemistry
+  Central China Normal University
+  Wuhan 430079
+  People's Republic of China
+;
+'Wang, Yu-Zhou' .
+; Key Laboratory of Pesticides and Chemical Biology
+  Ministry of Education
+  College of Chemistry
+  Central China Normal University
+  Wuhan 430079
+  People's Republic of China
+;
+'She, Neng-Fang' .
+; Key Laboratory of Pesticides and Chemical Biology
+  Ministry of Education
+  College of Chemistry
+  Central China Normal University
+  Wuhan 430079
+  People's Republic of China
+;
+'Gao, Meng' .
+; Key Laboratory of Pesticides and Chemical Biology
+  Ministry of Education
+  College of Chemistry
+  Central China Normal University
+  Wuhan 430079
+  People's Republic of China
+;
+data_I
+_audit_creation_method SHELXL-97
+_chemical_name_systematic 
+;
+1,2,4,5-tetrakis(bromomethyl)benzene
+;
+_chemical_name_common ?
+_chemical_formula_moiety 'C10 H10 Br4'
+_chemical_formula_sum 'C10 H10 Br4'
+_chemical_formula_iupac 'C10 H10 Br4'
+_chemical_formula_weight 449.82
+_chemical_melting_point ?
+_symmetry_cell_setting monoclinic
+_symmetry_space_group_name_H-M 'P 21/c'
+_symmetry_space_group_name_Hall '-P 2ybc'
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x, y+1/2, -z+1/2'
+'-x, -y, -z'
+'x, -y-1/2, z-1/2'
+_cell_length_a 6.9695(14)
+_cell_length_b 9.880(2)
+_cell_length_c 9.2352(19)
+_cell_angle_alpha 90.00
+_cell_angle_beta 103.638(4)
+_cell_angle_gamma 90.00
+_cell_volume 618.0(2)
+_cell_formula_units_Z 2
+_cell_measurement_reflns_used 1394
+_cell_measurement_theta_min 3.01
+_cell_measurement_theta_max 27.10
+_cell_measurement_temperature 298(2)
+_exptl_crystal_description Block
+_exptl_crystal_colour colourless
+_exptl_crystal_size_max 0.20
+_exptl_crystal_size_mid 0.20
+_exptl_crystal_size_min 0.20
+_exptl_crystal_density_diffrn 2.417
+_exptl_crystal_density_meas ?
+_exptl_crystal_density_method 'not measured'
+_exptl_crystal_F_000 420
+_exptl_absorpt_coefficient_mu 12.984
+_exptl_absorpt_correction_type multi-scan
+_exptl_absorpt_process_details '(SADABS; Sheldrick, 2003)'
+_exptl_absorpt_correction_T_min 0.1810
+_exptl_absorpt_correction_T_max 0.1810
+_exptl_special_details 
+;
+;
+_diffrn_ambient_temperature 298(2)
+_diffrn_radiation_type MoK\a
+_diffrn_radiation_wavelength 0.71073
+_diffrn_radiation_source 'fine-focus sealed tube'
+_diffrn_radiation_monochromator graphite
+_diffrn_measurement_device_type 'Bruker SMART CCD area-detector'
+_diffrn_measurement_method '\f and \w'
+_diffrn_detector_area_resol_mean ?
+_diffrn_reflns_number 3526
+_diffrn_reflns_av_R_equivalents 0.0390
+_diffrn_reflns_av_sigmaI/netI 0.0462
+_diffrn_reflns_theta_min 3.01
+_diffrn_reflns_theta_max 27.00
+_diffrn_reflns_theta_full 27.00
+_diffrn_measured_fraction_theta_max 0.998
+_diffrn_measured_fraction_theta_full 0.998
+_diffrn_reflns_limit_h_min -8
+_diffrn_reflns_limit_h_max 8
+_diffrn_reflns_limit_k_min -11
+_diffrn_reflns_limit_k_max 12
+_diffrn_reflns_limit_l_min -6
+_diffrn_reflns_limit_l_max 11
+_diffrn_standards_number 0
+_diffrn_standards_interval_count ?
+_diffrn_standards_interval_time ?
+_diffrn_standards_decay_% ?
+_refine_special_details
+
+;
+ Refinement of F^2^ against ALL reflections.  The weighted R-factor wR and
+ goodness of fit S are based on F^2^, conventional R-factors R are based
+ on F, with F set to zero for negative F^2^. The threshold expression of
+ F^2^ > 2sigma(F^2^) is used only for calculating R-factors(gt) etc. and is
+ not relevant to the choice of reflections for refinement.  R-factors based
+ on F^2^ are statistically about twice as large as those based on F, and R-
+ factors based on ALL data will be even larger.
+;
+_reflns_number_total 1343
+_reflns_number_gt 1067
+_reflns_threshold_expression I>2\s(I)
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_matrix_type full
+_refine_ls_R_factor_all 0.0506
+_refine_ls_R_factor_gt 0.0372
+_refine_ls_wR_factor_gt 0.0916
+_refine_ls_wR_factor_ref 0.0974
+_refine_ls_goodness_of_fit_ref 1.033
+_refine_ls_restrained_S_all 1.033
+_refine_ls_number_reflns 1343
+_refine_ls_number_parameters 64
+_refine_ls_number_restraints 0
+_refine_ls_hydrogen_treatment constr
+_refine_ls_weighting_scheme calc
+_refine_ls_weighting_details
+'calc w=1/[\s^2^(Fo^2^)+(0.0450P)^2^+0.7024P] where P=(Fo^2^+2Fc^2^)/3'
+_atom_sites_solution_hydrogens geom
+_atom_sites_solution_primary direct
+_atom_sites_solution_secondary difmap
+_refine_ls_shift/su_max 0.001
+_refine_ls_shift/su_mean 0.000
+_refine_diff_density_max 0.572
+_refine_diff_density_min -0.608
+_refine_ls_extinction_method none
+_refine_ls_extinction_coef ?
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+C C 0.0033 0.0016 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Br Br -0.2901 2.4595 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+_computing_data_collection 'SMART (Bruker, 2001)'
+_computing_cell_refinement 'SAINT-Plus (Bruker, 2001)'
+_computing_data_reduction SAINT-Plus
+_computing_structure_solution 'SHELXS97 (Sheldrick, 1997)'
+_computing_structure_refinement 'SHELXL97 (Sheldrick, 1997)'
+_computing_molecular_graphics 'PLATON (Spek, 2003)'
+_computing_publication_material PLATON
+loop_
+_atom_site_type_symbol
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_occupancy
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+Br Br1 0.27950(9) 0.86420(5) 1.00357(6) 0.0482(2) Uani d . 1 . .
+Br Br2 -0.27607(9) 0.83080(5) 0.79953(6) 0.0496(2) Uani d . 1 . .
+C C1 0.1369(7) 0.5903(4) 0.9656(5) 0.0316(10) Uani d . 1 . .
+C C2 -0.0561(7) 0.5880(4) 0.8778(5) 0.0314(10) Uani d . 1 . .
+C C3 0.1882(7) 0.5028(4) 1.0863(5) 0.0321(10) Uani d . 1 . .
+H H3 0.3163 0.5054 1.1451 0.039 Uiso calc R 1 . .
+C C4 0.2977(8) 0.6786(5) 0.9324(6) 0.0418(12) Uani d . 1 . .
+H H4A 0.2870 0.6800 0.8258 0.050 Uiso calc R 1 . .
+H H4B 0.4254 0.6409 0.9801 0.050 Uiso calc R 1 . .
+C C5 -0.1232(9) 0.6802(5) 0.7472(6) 0.0436(12) Uani d . 1 . .
+H H5A -0.2038 0.6300 0.6647 0.052 Uiso calc R 1 . .
+H H5B -0.0093 0.7151 0.7159 0.052 Uiso calc R 1 . .
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Br1 0.0684(4) 0.0245(3) 0.0521(4) -0.0120(2) 0.0153(3) -0.0004(2)
+Br2 0.0617(4) 0.0330(3) 0.0511(4) 0.0115(2) 0.0074(3) 0.0044(2)
+C1 0.047(3) 0.018(2) 0.035(2) -0.0032(18) 0.019(2) -0.0069(17)
+C2 0.049(3) 0.019(2) 0.029(2) 0.0046(18) 0.014(2) -0.0026(16)
+C3 0.038(2) 0.023(2) 0.035(2) -0.0028(17) 0.0068(19) -0.0061(18)
+C4 0.052(3) 0.031(3) 0.050(3) -0.010(2) 0.026(3) -0.010(2)
+C5 0.063(3) 0.034(3) 0.037(3) 0.008(2) 0.017(2) 0.002(2)
+_geom_special_details
+
+;
+ All esds (except the esd in the dihedral angle between two l.s. planes)
+ are estimated using the full covariance matrix.  The cell esds are taken
+ into account individually in the estimation of esds in distances, angles
+ and torsion angles; correlations between esds in cell parameters are only
+ used when they are defined by crystal symmetry.  An approximate (isotropic)
+ treatment of cell esds is used for estimating esds involving l.s. planes.
+;
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_site_symmetry_2
+_geom_bond_distance
+_geom_bond_publ_flag
+Br1 C4 . 1.962(5) y
+Br2 C5 . 1.956(5) y
+C1 C3 . 1.389(6) ?
+C1 C2 . 1.398(7) ?
+C1 C4 . 1.508(6) ?
+C2 C3 3_567 1.380(6) ?
+C2 C5 . 1.495(7) ?
+C3 C2 3_567 1.380(6) ?
+C3 H3 . 0.93 ?
+C4 H4A . 0.97 ?
+C4 H4B . 0.97 ?
+C5 H5A . 0.97 ?
+C5 H5B . 0.97 ?
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_3
+_geom_angle
+_geom_angle_publ_flag
+C3 C1 C2 . . 119.1(4) ?
+C3 C1 C4 . . 117.4(4) yes
+C2 C1 C4 . . 123.4(4) yes
+C3 C2 C1 3_567 . 118.4(4) y
+C3 C2 C5 3_567 . 119.4(5) ?
+C1 C2 C5 . . 122.2(4) y
+C2 C3 C1 3_567 . 122.5(4) ?
+C2 C3 H3 3_567 . 118.7 ?
+C1 C3 H3 . . 118.7 ?
+C1 C4 Br1 . . 111.3(3) yes
+C1 C4 H4A . . 109.4 ?
+Br1 C4 H4A . . 109.4 ?
+C1 C4 H4B . . 109.4 ?
+Br1 C4 H4B . . 109.4 ?
+H4A C4 H4B . . 108.0 ?
+C2 C5 Br2 . . 110.4(3) yes
+C2 C5 H5A . . 109.6 ?
+Br2 C5 H5A . . 109.6 ?
+C2 C5 H5B . . 109.6 ?
+Br2 C5 H5B . . 109.6 ?
+H5A C5 H5B . . 108.1 ?
+loop_
+_geom_torsion_atom_site_label_1
+_geom_torsion_atom_site_label_2
+_geom_torsion_atom_site_label_3
+_geom_torsion_atom_site_label_4
+_geom_torsion_site_symmetry_1
+_geom_torsion_site_symmetry_2
+_geom_torsion_site_symmetry_3
+_geom_torsion_site_symmetry_4
+_geom_torsion
+_geom_torsion_publ_flag
+C3 C1 C2 C3 . . . 3_567 -0.7(7) ?
+C4 C1 C2 C3 . . . 3_567 176.2(4) ?
+C3 C1 C2 C5 . . . . 179.3(4) ?
+C4 C1 C2 C5 . . . . -3.8(7) ?
+C2 C1 C3 C2 . . . 3_567 0.7(7) ?
+C4 C1 C3 C2 . . . 3_567 -176.4(4) ?
+C3 C1 C4 Br1 . . . . -101.9(4) ?
+C2 C1 C4 Br1 . . . . 81.1(5) ?
+C3 C2 C5 Br2 3_567 . . . 78.0(5) ?
+C1 C2 C5 Br2 . . . . -101.9(5) ?

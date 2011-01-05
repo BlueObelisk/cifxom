@@ -1,0 +1,11 @@
+data_sortav
+# Absorption correction 
+
+_exptl_absorpt_correction_type 'multi-scan' 
+_exptl_absorpt_correction_T_min  0.922
+_exptl_absorpt_correction_T_max  0.977
+_exptl_absorpt_process_details
+;
+multi-scan from symmetry-related measurements 
+ Sortav (Blessing 1995)
+;

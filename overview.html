@@ -1,0 +1,926 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="overview_files/filelist.xml">
+<title>CIFXML</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>ned24</o:Author>
+  <o:LastAuthor>ned24</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-11-08T13:42:00Z</o:Created>
+  <o:LastSaved>2007-11-08T13:42:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3178</o:Words>
+  <o:Characters>18115</o:Characters>
+  <o:Company>University of Cambridge</o:Company>
+  <o:Lines>150</o:Lines>
+  <o:Paragraphs>42</o:Paragraphs>
+  <o:CharactersWithSpaces>21251</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin-top:0cm;
+	margin-bottom:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+tt
+	{font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:7098929;
+	mso-list-template-ids:72096140;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:251856545;
+	mso-list-template-ids:-69563794;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:409040974;
+	mso-list-template-ids:864813320;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:841548729;
+	mso-list-template-ids:-599391798;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:853572567;
+	mso-list-template-ids:-1747552728;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:973146478;
+	mso-list-template-ids:82051248;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1011957664;
+	mso-list-template-ids:1440114478;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:1120806336;
+	mso-list-template-ids:-366053254;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:1531183365;
+	mso-list-template-ids:1927471928;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l9
+	{mso-list-id:1554349161;
+	mso-list-template-ids:1066318004;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1786192358;
+	mso-list-template-ids:1252016748;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l11
+	{mso-list-id:1860656370;
+	mso-list-template-ids:-793507004;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l12
+	{mso-list-id:2102795949;
+	mso-list-template-ids:759041178;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-GB style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1>CIFXML Overview.</h1>
+
+<p>CIFXML supports the CIF syntax and semantics from The International Union of
+Crystallography (http://www.iucr.org).</p>
+
+<p>The CIF architecture supports the hierarchy: </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'>One or more data files
+     (e.g. a diffraction experiment and its processing)</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'>One or more Dictionaries to
+     which the data file must conform</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'>A Dictionary Defintion
+     Language (DDL) to which the dictionary must conform and which provides
+     semantic information</li>
+</ul>
+
+<p class=MsoNormal>CIFXML supports documents and dictionaries conformant to
+DDL1.</p>
+
+<p>This document describes how the CIF specification is implemented in CIFXML.
+We have copied the text from the CIF syntax[1] and semantics[2] specification
+documents and annotate it where appropriate. Text in italics is copied verbatim
+from the specification, while the rest are our comments. The numbers refer to
+the sections in the CIF specification. Sections irrelevant to this
+implementation may be omitted. </p>
+
+<p>[1] http://www.iucr.org/iucr-top/cif/spec/version1.1/cifsyntax.html<br>
+[2] http://www.iucr.org/iucr-top/cif/spec/version1.1/cifsemantics.html </p>
+
+<h2>Definition of Terms (in [1] and [2])</h2>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.1. A <b>CIF</b> is a
+     file conforming to the specification herein stated, containing either
+     information on a crystallographic experiment or its results (or similar
+     scientific content); or descriptions of the data identifiers in such a
+     file. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIF</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.2 A <b>data file</b>
+     is understood to convey information relating to a crystallographic
+     experiment. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIF</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.3. A <b>dictionary
+     file</b> is understood to contain information about the data items in one
+     or more data files as identified by their data names. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIF</span></tt>. CIFXML
+     does not <i>per se</i> support semantics beyond any CIF file, which is
+     done through a further package.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.4. A <b>data name</b>
+     is a case-insensitive identifier (a string of characters beginning with an
+     underscore character) of the content of an associated data value. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFItem.getName()</span></tt>
+     or <tt><span style='font-size:10.0pt'>CIFLoop.getNames()</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.5. A <b>data value</b>
+     is a string of characters representing a particular item of information.
+     It may represent a single numerical value; a letter, word or phrase;
+     extended discursive text; or in principle any coherent unit of data such
+     as an image, audio clip or virtual-reality object. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFItem.getValue()</span></tt>
+     or <tt><span style='font-size:10.0pt'>CIFLoop.getValues()</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.6. A <b>data item</b>
+     is a specific piece of information defined by a data name and an
+     associated data value. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFItem</span></tt> or <tt><span
+     style='font-size:10.0pt'>CIFLoop</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.8. A <b>data block</b>
+     is the highest-level component of a CIF, containing data items or save
+     frames. A data block is identified by a data block header, which is an
+     isolated character string (that is, bounded by white space and not forming
+     part of a data value) beginning with the case-insensitive reserved
+     characters </i><tt><i><span style='font-size:10.0pt'>data_</span></i></tt><i>.
+     </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFDataBlock</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.9. A <b>block code</b>
+     is the variable part of a data block header, e.g. the string </i><tt><i><span
+     style='font-size:10.0pt'>foo</span></i></tt><i> in the header </i><tt><i><span
+     style='font-size:10.0pt'>data_foo</span></i></tt><i>. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFDataBlock.getId()</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.10. A <b>save frame</b>
+     is a partitioned collection of data items within a data block, started by
+     a <b>save frame header</b>, which is an isolated character string
+     beginning with the case-insensitive reserved characters </i><tt><i><span
+     style='font-size:10.0pt'>save_</span></i></tt><i>, and terminated with an
+     isolated character string containing only the case-insensitive reserved
+     characters </i><tt><i><span style='font-size:10.0pt'>save_</span></i></tt><i>.
+     </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFSaveFrame</span></tt></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><i>2.11. A <b>frame code</b>
+     is the variable part of a save frame header, e.g. the string </i><tt><i><span
+     style='font-size:10.0pt'>foo</span></i></tt><i> in the header </i><tt><i><span
+     style='font-size:10.0pt'>save_foo</span></i></tt><i>. </i><br>
+     provided by: <tt><span style='font-size:10.0pt'>CIFSaveFrame.getId()</span></tt></li>
+</ul>
+
+<h2>Syntax (from [1])</h2>
+
+<h3>Supported and enforced.</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>3-4.</i><br>
+     Supported</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>5.</i><br>
+     CIFXML allows save frames but provides little support.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>6. Within a single CIF,
+     no two data blocks may have the same name.</i><br>
+     Supported. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>7. A given data name
+     (tag) (see 2.4 and 2.7) may appear no more than once in a given data
+     block.</i><br>
+     Supported. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>8. </i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>9.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>10. A simple data value
+     may optionally be delimited by any of the same set of delimiting character
+     strings, except for data values that are to be interpreted as numbers.</i><br>
+     CIFXML does not provide datatypes, and does NOT store the type of quoting,
+     though it can validate values against CIF dictionary supported <tt><span
+     style='font-size:10.0pt'>(_, #, ', &quot;, ;)</span></tt> and
+     not-supported <tt><span style='font-size:10.0pt'>($, [, ])</span></tt>. <tt><span
+     style='font-size:10.0pt'>stop_ and global_</span></tt> are recognised but
+     ignored.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>12.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>13. The base CIF
+     specification distinguishes between character and numeric values.</i> <br>
+     We find it difficult to interpret the described semantics in a
+     context-free manner and CIFXML only supports char.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>14-18.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>19. Matching square
+     bracket characters, '[' and ']', are reserved.</i><br>
+     Not supported </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>20-24.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>25. The way in which a
+     line is terminated is operating-system dependent.</i><br>
+     CIFXML replaces all EOL by a single &quot;\n&quot; (ASCII 10) character.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>26-27.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>28. Lines of text may
+     not exceed 2048 characters in length.</i><br>
+     Not supported. CIFXML allows unlimited length.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>29. Data names may not
+     exceed 75 characters in length.</i><br>
+     Not supported. CIFXML allows unlimited length.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>30. Data block codes and
+     save frame codes may not exceed 75 characters in length.</i><br>
+     Not supported. CIFXML allows unlimited length.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>31.</i><br>
+     Supported.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>32-33.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>34. the first 11 bytes
+     of the file should be the string #\#CIF_1.1.</i><br>
+     Supported.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>35-56</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>57.</i><br>
+     <i>No string LOOP_, STOP_, GLOBAL_ or which starts with DATA_ or SAVE_ is
+     accepted as a non-quoted string. </i><br>
+     CIFXML does not support quoting semantics.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>58-62.</i></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><i>63. The number of values
+     in the (loop) body must be a multiple of the number of tags in the header.</i><br>
+     Supported.</li>
+</ul>
+
+<h2>Semantics (from [2])</h2>
+
+<p>The IUCr provides a list of accepted, possible and reserved semantics. Some
+of these are difficult to implement unambiguously and some are simply
+difficult. Note that dictionaries are supported by layering on top of CIFXML
+and are generally irrelevant here. </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'>3. [Dictionaries]. <i>In
+     CIF applications, formal catalogues of standard data names and their
+     associated attributes are maintained as external reference files called
+     data dictionaries. These dictionary files share the same structure and
+     syntax rules as data CIFs.</i><br>
+     CIFXML itself does not require dictionaries.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><i>4. [DDL]
+     [...](Dictionary Definition Languages or DDL) are supported for detailing
+     the meaning and associated attributes of data names. These are known as DDL1
+     (Hall &amp;Cook, 1995) and DDL2.</i><br>
+     CIFXML only supports DDL1. DDL1 itself is in the CIF dictionary syntax but
+     its semantics are not currently supported </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><i>5. While it may be
+     formally possible to define the semantics of the data items in a given
+     data file in both DDL1 and DDL2 data dictionaries, in practice different
+     dictionaries are constructed to define the data names appropriate for
+     particular crystallographic applications, and each such dictionary is
+     written in DDL1 or DDL2 formalism according to which appears better able
+     to describe the data model employed. There is thus in practice a
+     bifurcation of CIF into two dialects according to the DDL used in
+     composing the relevant dictionary file. However, the use of aliases may
+     permit applications tuned to one dialect to import data constructed
+     according to the other.</i><br>
+     Only DDL1 is supported.</li>
+</ul>
+
+<h3>Data name semantics</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>6. Data names should be
+     considered as void of semantic content.</i><br>
+     Supported.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>7. However, it is
+     customary to construct data names as a sequence of components elaborating
+     the classification of the item within the logical structure of its
+     associated dictionary. Hence a data name such as _atom_site_fract_x
+     displays a hierarchical arrangement of components corresponding to
+     membership of nested groupings of data elements. The choice of components
+     readily indicates to a human reader that this data item refers to the
+     fractional x coordinate of an atomic site within a crystal unit cell, but it
+     should be emphasised from a computer programming viewpoint that this is
+     coincidental; the attributes that constrain the value of this data item
+     (and its relationship to others such as _atom_site_fract_y and
+     _atom_site_fract_z) must be obtained from the dictionary and not otherwise
+     inferred.</i><br>
+     Supported. CIFXML makes no attempt to parse such context-dependent
+     constructions.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>8. In practice data
+     names described in a DDL2 dictionary are constructed with a period
+     character separating their specific function from the name of the category
+     to which they have been assigned. In the absence of a dictionary file,
+     this convention permits the inference that the data item with name
+     _atom_site.fract_x will appear in the same looped list as other items with
+     names beginning _atom_site., and that all such items belong to the same
+     category. </i><br>
+     DDL2 is not supported. DDL1 names with an embedded &quot;.&quot; are
+     regarded as semantically void. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>9. The intention of the
+     maintainers of public CIF dictionaries is to formulate a single authoritative
+     set of data names for each CIF dialect (i.e. DDL1 and DDL2), thus
+     facilitating the reliable archive and interchange of crystallographic
+     data. However, it is also permissible for users to introduce local data
+     names into a CIF. Two mechanisms exist to reduce the danger of collision
+     of data names that are not incorporated into public dictionaries.</i><br>
+     Not directly supported in CIFXML. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>10. The character
+     string [local] (including the literal bracket characters) is reserved for
+     local use. That is, no public dictionary will define a data name that
+     includes this string. This allows experimentation with data items in a
+     strictly local context, i.e. in cases where the CIF is not intended for
+     interchange with any other user.</i><br>
+     Semantics associated with this are ignored.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>11. Where CIFs
+     including local data items are expected to enjoy a public circulation,
+     authors may register a reserved prefix for their sole use. The registry is
+     available on the web at <o:p></o:p></i></li>
+</ul>
+
+<pre style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i>http://www.iucr.org/iucr-top/cif/spec/reserved.html<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><i>A reserved prefix, e.g. foo, must be used in the
+following ways <o:p></o:p></i></p>
+
+<pre style='margin-left:36.0pt'><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>* If the data file contains items defined in a DDL1 dictionary, the local data names assigned under the reserved prefix must contain it as their first component, e.g. _foo_atom_site_my_item.<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>* If the data file contains items defined in a DDL2 dictionary, then the reserved prefix must be<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>o the first component of data names in a category defined for local use, e.g. _foo_my_category.my_item<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>o the first component following the period character in a data name describing a new item in a category already defined in a public dictionary, e.g. _atom_site.foo_my_item<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><br>
+. Semantics ignored by CIFXML. </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l12 level1 lfo5;tab-stops:list 36.0pt'><i>12. There is no
+     syntactic property identifying such a reserved prefix, so that software
+     validating or otherwise handling such local data names must scan the
+     entire registry and match registered prefixes against the indicated
+     components of data names. Note that reserved prefixes may themselves
+     contain underscore characters, so a maximal matching search must be made.</i><br>
+     Semantics ignored by CIFXML. </li>
+</ul>
+
+<h3>Note on handling of units</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l8 level1 lfo6;tab-stops:list 36.0pt'><i>13. The published
+     specification for CIF Version 1.0 permitted data values expressed in
+     different units to be tagged by variant data names (Hall, Allen &amp;
+     Brown, 1991, p. 657:) <o:p></o:p></i></li>
+</ul>
+
+<pre style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo6'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo6'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Many numeric fields contain data for which the units must be known. Each CIF data item has a default units code which is stated in the CIF Dictionary. If a data item is not stored in the default units, the units code is appended to the data name. For example, the default units for a crystal cell dimension are Angstroms. If it is necessary to include this data item in a CIF with the units of picometres, the data name of _cell_length_a is replaced by _cell_length_a_pm. Only those units defined in the CIF Dictionary are acceptable. The default units, except for the Angstrom, conform to the SI Standard adopted by the IUCr.<o:p></o:p></i></pre>
+
+<p style='margin-left:36.0pt'><i>This approach is deprecated and has not been
+supported by any official CIF dictionary published subsequent to version 1.0 of
+the Core. All data values must be expressed in the single unit assigned in the
+associated dictionary. <o:p></o:p></i></p>
+
+<p style='margin-left:36.0pt'><i>A small number of archived CIFs exist with
+variant data names as permitted by the above clause. If it is necessary to
+validate them against versions of the Core dictionary subsequent to version
+1.0, the formal compatibility dictionary cif_compat.dic may be used for the
+purpose. No other use should be made of this dictionary. <o:p></o:p></i></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><br>
+Semantics ignored by CIFXML. </p>
+
+<h2>Data value semantics</h2>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l7 level1 lfo7;tab-stops:list 36.0pt'><i>14. The STAR syntax
+     permits retrieval of data by simply requesting a specific data name within
+     a specific data block. Prior knowledge about data type (e.g. text or
+     numbers), whether the item is looped, or whether the item exists in the
+     file at all, is unnecessary. However, applications in general need to know
+     data type, valid ranges of values, and relationships between data items;
+     and a program designer needs to know the purpose of the data item (i.e.
+     what physical quantity or internal book-keeping function it represents).
+     While such semantic information may be defined informally for local data
+     items (ones not intended for exchange between different users or software
+     applications), formal descriptions of the semantics associated with data
+     values are catalogued in data dictionary files. Currently two formalisms
+     (dictionary definition languages) for describing data value attributes are
+     supported; full specifications of these formalisms (known as DDL1 and
+     DDL2) are provided elsewhere.</i><br>
+     <br>
+     CIFXML provides a clean separation between the data and the application
+     program. CIFXML does allow retrieval of a value or loop of values by
+     requesting a specific data name. It is left to a dictionary validator or
+     application validator to decide whether the value is permissible.</li>
+</ul>
+
+<h3>Data typing</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>15. Four base data types
+     are supported in CIF. These are <o:p></o:p></i></li>
+</ul>
+
+<pre style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>* numb: a value interpretable as a decimal base number and supplied as an integer, a floating-point number or in scientific notation;<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>* char: a value to be interpreted as character or text data (where the value contains white-space characters, it must be quoted);<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>* uchar: a value to be interpreted as character or text data but in a case-insensitive manner (i.e. the values FOO and foo are to be taken as identical);<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>* null: a special data type associated with items for which no definite value may be stored in computer memory. It is the type associated with the special character literal values ? (query mark) and . (full point) which may appear as values for any data item within a data file (see section on &quot;Special generic values&quot; below). It is also the type assigned to items defined in dictionary files which may not occur in data files.<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><br>
+Without a dictionary there is no knowledge of the datatype, so CIFXML preserves
+the lexical form of the data value after removal of any quotes. It retains
+exact whitespace including invisible leading and trailing characters within
+data values (except that line ends are normalised to #10). </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>16. Many applications
+     distinguish between multi-line text fields and character string values
+     that fit within a single line of text. While this is a convenient
+     practical distinction for coding purposes, formally both manifestations
+     should be regarded as having the same base type, which might be
+     &quot;char&quot; or &quot;uchar&quot;. Applications are at liberty to
+     choose whether to define specific multi-line text subtypes, and whether to
+     permit casting between subtypes of a base type. The examples of character
+     string delimiters in paragraph 20 of the document &quot;Syntax&quot; are
+     predicated on an approach that handles all subtypes of character or text
+     data equivalently.</i><br>
+     See above for CIFXML treatment. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>17. Where the attributes
+     of a data value are not available in a dictionary listing, it may be
+     assumed that a character string interpretable as a number should be taken
+     to represent an item of type numb. However, an explicit dictionary
+     declaration of type will override such an assumption.</i><br>
+     CIFXML makes no attempt to interpret a data value as a numb and will
+     preserve its lexical representation unchanged. </li>
+</ul>
+
+<h3 style='margin-left:36.0pt'>Subtyping</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>18. The base data types
+     detailed in the previous section are very general, and need to be refined
+     for practical application. Refinement of types is to some extent
+     application-dependent, and different subtypes are supported for data items
+     defined by DDL1 and DDL2 dictionary files. The following notes indicate
+     some considerations, but the relevant dictionary files and documentation
+     should be consulted in each case.</i><br>
+     CIFXML per se does not support subtypes. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>19. DDL1 dictionaries.<br>
+     Standard uncertainties: Values of type numb may include a standard
+     uncertainty in the final digit(s) of the number where the associated item
+     definition includes the attribute <o:p></o:p></i></li>
+</ul>
+
+<pre style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo8'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>_type_conditions<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>esd<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><i>For example, a value of 34.5(12) means 34.5 with a
+standard uncertainty of 1.2; it may also be expressed in scientific notation as
+3.45E1(12).</i><br>
+CIFXML supports these semantics and will return values with our without the
+SUs. </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>21. The unquoted
+     character literals ? (query mark) and . (full point) are special and are
+     valid expressions for any data type.</i><br>
+     CIFXML ignores these semantics. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>22. The value ? means
+     that the actual value of a requested data item is unknown.</i><br>
+     CIFXML ignores these semantics and processes this value as a text string </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo8;tab-stops:list 36.0pt'><i>23. The value . means
+     that the actual value of a requested data item is inapplicable. This is
+     most commonly used in a looped list where a data value is required for
+     syntactic integrity.</i><br>
+     CIFXML ignores these semantics and processes this value as a text string </li>
+</ul>
+
+<h2>Embedded data semantics</h2>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l5 level1 lfo9;tab-stops:list 36.0pt'><i>24. The attributes of
+     data items defined in CIF dictionaries serve to direct crystallographic
+     applications in the retrieval, storage and validation of relevant data. In
+     principle a CIF might include as data items suitably encoded fields
+     representing data suitable for manipulation by text processing, image,
+     spreadsheet, database or other applications. It would be useful to have a
+     formal mechanism allowing a CIF to invoke appropriate content handlers for
+     such data fields, and this is under investigation for the next CIF version
+     specification.</i><br>
+     CIFXML ignores these semantics and processes any such values as text
+     strings. </li>
+</ul>
+
+<h3>CIF conventions for special characters in text</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l11 level1 lfo10;tab-stops:list 36.0pt'><i>25. The one existing
+     example of embedded semantics is the text character markup introduced in
+     the CIF Version 1.0 specification and summarised in paragraphs 30-37 below.
+     The specification is silent on which fields should be interpreted
+     according to these markup conventions, but the published examples suggest
+     that they may be used in any character field in a CIF data file except as
+     prohibited by a dictionary directive. It is intended that the next CIF
+     version specification shall formally declare where such markup may be
+     used.</i></li>
+</ul>
+
+<h3>Handling of long lines</h3>
+
+<p style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo11;
+tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;mso-bidi-font-style:italic'><span style='mso-list:
+Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i>26. The restriction in line length within CIF
+requires techniques to handle without semantic loss the content of lines of text
+exceeding the limit (2048 characters in this revision, 80 characters in the
+initial CIF specification). The line folding protocol defined here provides a
+general mechanism for wrapping lines of text within CIFs to any extent within
+the overall line length limit. A specific application where this would be
+useful is the conversion of lines longer than 80 characters to the CIF 1.0
+limit. This 80-character limit is used in the examples below for illustrative
+purposes. <o:p></o:p></i></p>
+
+<p style='margin-left:36.0pt'><i>These techniques are applied only to the
+contents of text fields and to comments. <o:p></o:p></i></p>
+
+<p style='margin-left:36.0pt'><i>In order to permit such folding a special
+semantics is defined for use of the backslash. It is important to understand
+that this does not change the syntax of CIF 1.0. All existing CIFs conforming
+to the CIF 1.0 specification can be viewed as having exactly the same semantics
+as they now have. Use of these transformational semantics is optional, but
+recommended. <o:p></o:p></i></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'>[...further discussion omitted...] CIFXML currently does
+not support this convention </p>
+
+<h3>Dictionary compliance</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l10 level1 lfo12;tab-stops:list 36.0pt'><i>27. Dictionary files
+     containing the definitions and attribute sets for the data items contained
+     in a CIF should be identified within the CIF by some or all of the data
+     items <o:p></o:p></i></li>
+</ul>
+
+<pre style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo12'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo12'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>_audit_conform_dict_name<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo12'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>_audit_conform_dict_version<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo12'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>_audit_conform_dict_location<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><i>corresponding to DDL1 dictionaries, or <o:p></o:p></i></p>
+
+<pre style='margin-left:36.0pt'><i><o:p>&nbsp;</o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>_audit_conform.dict_name<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>_audit_conform.dict_version<o:p></o:p></i></pre><pre
+style='margin-left:36.0pt'><i><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>_audit_conform.dict_location<o:p></o:p></i></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:36.0pt'><i>for DDL2 dictionaries. Where no such information is
+provided, it may be assumed that the file should conform against the core CIF
+dictionary.</i><br>
+CIFXML does not process these semantics. </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l10 level1 lfo12;tab-stops:list 36.0pt'><i>28. The _audit_conform
+     data items may be looped in the case where more than one dictionary is
+     used to define the items in a CIF, and they may include dictionaries of
+     local data items provided such dictionary files have been prepared in
+     accordance with the rules of the appropriate DDL.</i><br>
+     CIFXML does not process these semantics. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l10 level1 lfo12;tab-stops:list 36.0pt'><i>29. A detailed
+     protocol exists for locating, merging and overlaying multiple dictionary
+     files (McMahon, Westbrook &amp; Bernstein, 2000).</i><br>
+     CIFXML does not process these semantics. </li>
+</ul>
+
+<h3>CIF markup conventions</h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l9 level1 lfo13;tab-stops:list 36.0pt'><i>30. If permitted by the
+     relevant dictionary and if no other indication is present, the contents of
+     a text or character field are assumed to be interpretable as text in
+     English or some other human language. Certain special codes are used to
+     indicate special characters or accented letters not available in the ASCII
+     character set, as listed below. </i><br>
+     CIFXML attempts to process some of these into UNICODE. However no explicit
+     conversion is given, and textual representations sometimes have to be
+     used. CIFXML will attempt to create this markup on output of a CIF.
+     However not all conversions are supported </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l9 level1 lfo13;tab-stops:list 36.0pt'><i>31-37. </i></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>CIFXML can be extended to support
+most of this if required. </p>
+
+</div>
+
+</body>
+
+</html>

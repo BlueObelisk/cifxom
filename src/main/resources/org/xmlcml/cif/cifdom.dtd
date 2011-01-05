@@ -1,0 +1,19 @@
+<!ELEMENT cif (datablock | comment)*>
+<!ELEMENT datablock (comment | item | loop)*>
+<!ATTLIST datablock
+	id CDATA #REQUIRED
+	>
+<!ELEMENT comment (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item
+	name CDATA #REQUIRED
+	su CDATA #IMPLIED
+	numericValue CDATA #IMPLIED
+	dataType CDATA #IMPLIED>
+<!ELEMENT loop (row+)>
+<!ATTLIST loop
+	names CDATA #REQUIRED>
+<!ELEMENT row (cell+)>
+<!ELEMENT cell (#PCDATA)>
+<!ATTLIST cell
+	su CDATA #IMPLIED>

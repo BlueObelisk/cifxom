@@ -1,0 +1,52 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+ <xs:element name='cell'>
+  <xs:complexType mixed='true'>
+  <xs:attribute name='su'/>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='cif'>
+  <xs:complexType>
+   <xs:choice minOccurs='0' maxOccurs='unbounded'>
+     <xs:element ref='datablock'/>
+     <xs:element ref='comment'/>
+   </xs:choice>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='comment'>
+  <xs:complexType mixed='true'>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='datablock'>
+  <xs:complexType>
+   <xs:choice minOccurs='0' maxOccurs='unbounded'>
+     <xs:element ref='comment'/>
+     <xs:element ref='item'/>
+     <xs:element ref='loop'/>
+   </xs:choice>
+  <xs:attribute name='id' use='required'/>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='item'>
+  <xs:complexType mixed='true'>
+  <xs:attribute name='name' use='required'/>
+  <xs:attribute name='su'/>
+  <xs:attribute name='numericValue'/>
+  <xs:attribute name='dataType'/>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='loop'>
+  <xs:complexType>
+   <xs:sequence>
+     <xs:element ref='row' maxOccurs='unbounded'/>
+   </xs:sequence>
+  <xs:attribute name='names' use='required'/>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='row'>
+  <xs:complexType>
+   <xs:sequence>
+     <xs:element ref='cell' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>

@@ -1,0 +1,363 @@
+##############################################################################
+###                                                                        ###
+###        Electronic paper (Acta Crystallographica Section E)             ###
+###                                                                        ###
+##############################################################################
+#                                                                            #
+# This CIF contains the data in a paper accepted for publication in Acta     #
+# Crystallographica Section E. It conforms to the requirements of Notes      #
+# for Authors for Section E, and has been peer reviewed under the auspices   #
+# of the IUCr Commission on Journals.                                        #
+#                                                                            #
+# Full details of the Crystallographic Information File format               #
+# are given in the paper "The Crystallographic Information File (CIF):       #
+# a New Standard Archive File for Crystallography" by S. R. Hall, F. H.      #
+# Allen and I. D. Brown [Acta Cryst. (1991), A47, 655-685].                  #
+#                                                                            #
+# The current version of the core CIF dictionary is obtainable from          #
+# ftp://ftp.iucr.org/pub/cif_core.dic. The current version number is 2.1.    #
+#                                                                            #
+# Software is freely available for graphical display of the structure(s) in  #
+# this CIF.  For information consult the CIF home page http://www.iucr.org/  #
+# cif/home.html                                                              #
+#                                                                            #
+#            Copyright International Union of Crystallography                #
+#                                                                            #
+##############################################################################
+                                             
+data_global
+_audit_creation_method     'manual editing of SHELXL-97 .cif file'
+_journal_date_recd_electronic     2005-06-23
+_journal_date_accepted     2005-06-29
+_journal_name_full     'Acta Crystallographica, Section E'
+_journal_year     2005
+_journal_volume     61
+_journal_issue      8
+_journal_page_first     o2379
+_journal_page_last     o2381
+_journal_paper_category     EO
+_publ_contact_author_name     'Rafal Kruszynski'
+_publ_contact_author_address
+;Institute of General and Ecological Chemistry
+ Technical University of \/L\'od\'z
+ ul. \.Zeromskiego 116
+ 90-924 \/L\'od\'z
+ Poland
+;
+_publ_contact_author_email     kruszyna@p.lodz.pl
+_publ_contact_author_fax     '(48-42) 631 31 03'
+_publ_contact_author_phone     '(48-42) 631 31 37'
+_publ_section_title
+;
+Stacking and N---H...O interactions in 2,3-dimethyl-6-nitroaniline
+;
+loop_
+    _publ_author_name
+    _publ_author_address
+    'Kruszynski, Rafal'
+;Institute of General and Ecological Chemistry
+ Technical University of \/L\'od\'z
+ ul. \.Zeromskiego 116
+ 90-924 \/L\'od\'z
+ Poland
+;
+data_I
+_audit_creation_method     SHELXL-97
+_chemical_name_systematic
+;
+2,3-dimethyl-6-nitroaniline
+;
+_chemical_name_common
+;
+6-nitro-2,3-xylidine
+;
+_chemical_formula_moiety     'C8 H10 N2 O2'
+_chemical_formula_sum     'C8 H10 N2 O2'
+_chemical_formula_iupac     'C8 H10 N2 O2'
+_chemical_formula_weight     166.18
+_symmetry_cell_setting     monoclinic
+_symmetry_space_group_name_H-M     'C 2/c'
+loop_
+    _symmetry_equiv_pos_as_xyz
+    'x, y, z'
+    '-x, y, -z+1/2'
+    'x+1/2, y+1/2, z'
+    '-x+1/2, y+1/2, -z+1/2'
+    '-x, -y, -z'
+    'x, -y, z-1/2'
+    '-x+1/2, -y+1/2, -z'
+    'x+1/2, -y+1/2, z-1/2'
+_cell_length_a     14.4439(11)
+_cell_length_b     8.6837(6)
+_cell_length_c     14.0031(10)
+_cell_angle_alpha     90.00
+_cell_angle_beta     111.251(9)
+_cell_angle_gamma     90.00
+_cell_volume     1636.9(2)
+_cell_formula_units_Z     8
+_cell_measurement_reflns_used     5030
+_cell_measurement_theta_min     2
+_cell_measurement_theta_max     25
+_cell_measurement_temperature     291.0(3)
+_exptl_crystal_description     prism
+_exptl_crystal_colour     orange
+_exptl_crystal_size_max     0.481
+_exptl_crystal_size_mid     0.402
+_exptl_crystal_size_min     0.253
+_exptl_crystal_density_diffrn     1.349
+_exptl_crystal_density_meas     ?
+_exptl_crystal_density_method     'not measured'
+_exptl_crystal_F_000     704
+_exptl_absorpt_coefficient_mu     0.099
+_exptl_absorpt_correction_type     numerical
+_exptl_absorpt_process_details
+;
+(X-RED; Stoe & Cie, 1999)
+;
+_exptl_absorpt_correction_T_min     0.941
+_exptl_absorpt_correction_T_max     0.991
+_exptl_special_details
+;
+;
+_diffrn_ambient_temperature     291.0(3)
+_diffrn_radiation_type     MoK\a
+_diffrn_radiation_wavelength     0.71073
+_diffrn_radiation_source     'fine-focus sealed tube'
+_diffrn_radiation_monochromator     graphite
+_diffrn_measurement_device_type     'Kuma KM-4 CCD'
+_diffrn_measurement_method     \w
+_diffrn_detector_area_resol_mean     ?
+_diffrn_reflns_number     9090
+_diffrn_reflns_av_R_equivalents     0.0346
+_diffrn_reflns_av_sigmaI/netI     0.0175
+_diffrn_reflns_theta_min     2.79
+_diffrn_reflns_theta_max     25.33
+_diffrn_reflns_theta_full     25.33
+_diffrn_measured_fraction_theta_max     0.465
+_diffrn_measured_fraction_theta_full     0.465
+_diffrn_reflns_limit_h_min     -17
+_diffrn_reflns_limit_h_max     17
+_diffrn_reflns_limit_k_min     -10
+_diffrn_reflns_limit_k_max     10
+_diffrn_reflns_limit_l_min     -16
+_diffrn_reflns_limit_l_max     15
+_diffrn_standards_number     21
+_diffrn_standards_interval_count     ?
+_diffrn_standards_interval_time     14.66
+_diffrn_standards_decay_%     9.7
+_refine_special_details
+;
+ Refinement of F^2^ against ALL reflections.  The weighted R-factor wR and
+ goodness of fit S are based on F^2^, conventional R-factors R are based
+ on F, with F set to zero for negative F^2^. The threshold expression of
+ F^2^ > 2sigma(F^2^) is used only for calculating R-factors(gt) etc. and is
+ not relevant to the choice of reflections for refinement.  R-factors based
+ on F^2^ are statistically about twice as large as those based on F, and R-
+ factors based on ALL data will be even larger.
+;
+_reflns_number_total     1492
+_reflns_number_gt     1297
+_reflns_threshold_expression     I>2\s(I)
+_refine_ls_structure_factor_coef     Fsqd
+_refine_ls_matrix_type     full
+_refine_ls_R_factor_all     0.0639
+_refine_ls_R_factor_gt     0.0540
+_refine_ls_wR_factor_gt     0.1530
+_refine_ls_wR_factor_ref     0.1634
+_refine_ls_goodness_of_fit_ref     1.167
+_refine_ls_restrained_S_all     1.167
+_refine_ls_number_reflns     1492
+_refine_ls_number_parameters     112
+_refine_ls_number_restraints     0
+_refine_ls_hydrogen_treatment     constr
+_refine_ls_weighting_scheme     calc
+_refine_ls_weighting_details
+          'w = 1/[\s^2^(Fo^2^)+(0.0975P)^2^+0.2133P] where P = (Fo^2^+2Fc^2^)/3'
+_atom_sites_solution_hydrogens     difmap
+_atom_sites_solution_primary     direct
+_atom_sites_solution_secondary     direct
+_refine_ls_shift/su_max     0.000
+_refine_ls_shift/su_mean     0.000
+_refine_diff_density_max     0.210
+_refine_diff_density_min     -0.185
+_refine_ls_extinction_method     none
+_refine_ls_extinction_coef     ?
+loop_
+    _atom_type_symbol
+    _atom_type_description
+    _atom_type_scat_dispersion_real
+    _atom_type_scat_dispersion_imag
+    _atom_type_scat_source
+    'C' 'C' 0.0033 0.0016
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+    'H' 'H' 0.0000 0.0000
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+    'N' 'N' 0.0061 0.0033
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+    'O' 'O' 0.0106 0.0060
+                         'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+_computing_data_collection
+;
+CrysAlis CCD (UNIL IC & Kuma, 2000)
+;
+_computing_cell_refinement
+;
+CrysAlis RED (UNIL IC & Kuma, 2000)
+;
+_computing_data_reduction     'CrysAlis RED'
+_computing_structure_solution     'SHELXS97 (Sheldrick, 1997)'
+_computing_structure_refinement     'SHELXL97 (Sheldrick, 1997)'
+_computing_molecular_graphics
+;
+MERCURY (Version 1.4; Bruno <i>et al.</i>, 2002)
+;
+_computing_publication_material     SHELXL97
+loop_
+    _atom_site_label
+    _atom_site_fract_x
+    _atom_site_fract_y
+    _atom_site_fract_z
+    _atom_site_U_iso_or_equiv
+    _atom_site_adp_type
+    _atom_site_calc_flag
+    _atom_site_refinement_flags
+    _atom_site_occupancy
+    _atom_site_disorder_assembly
+    _atom_site_disorder_group
+    _atom_site_type_symbol
+    C1 0.38107(12) 0.80506(19) 0.07627(12) 0.0371(4) Uani d . 1 . . C
+    C2 0.38012(12) 0.81245(18) -0.02559(12) 0.0353(4) Uani d . 1 . . C
+    C3 0.37547(12) 0.67001(18) -0.07882(13) 0.0368(4) Uani d . 1 . . C
+    C4 0.36957(12) 0.53156(18) -0.03186(13) 0.0396(5) Uani d . 1 . . C
+    C5 0.37129(14) 0.5295(2) 0.06996(15) 0.0482(5) Uani d . 1 . . C
+    H5 0.3684 0.4360 0.1012 0.058 Uiso calc R 1 . . H
+    C6 0.37709(14) 0.6637(2) 0.12263(14) 0.0456(5) Uani d . 1 . . C
+    H6 0.3784 0.6612 0.1895 0.055 Uiso calc R 1 . . H
+    N1 0.38383(11) 0.94163(18) 0.13640(12) 0.0474(4) Uani d . 1 . . N
+    O1 0.38809(11) 1.07134(16) 0.10086(12) 0.0652(5) Uani d . 1 . . O
+    O2 0.38082(12) 0.92551(18) 0.22332(11) 0.0677(5) Uani d . 1 . . O
+    N2 0.38212(11) 0.94697(17) -0.07443(12) 0.0498(5) Uani d . 1 . . N
+    H2A 0.38409(12) 1.0347(18) -0.0432(6) 0.060 Uiso calc R 1 . . H
+    H2B 0.38142(12) 0.94573(17) -0.1371(12) 0.060 Uiso calc R 1 . . H
+    C7 0.37622(17) 0.6753(2) -0.18646(14) 0.0559(6) Uani d . 1 . . C
+    H7A 0.3853 0.5732 -0.2078 0.084 Uiso calc R 1 . . H
+    H7B 0.4296 0.7401 -0.1878 0.084 Uiso calc R 1 . . H
+    H7C 0.3142 0.7161 -0.2321 0.084 Uiso calc R 1 . . H
+    C8 0.36032(16) 0.3797(2) -0.08706(16) 0.0564(5) Uani d . 1 . . C
+    H8A 0.4199 0.3605 -0.1006 0.085 Uiso calc R 1 . . H
+    H8B 0.3046 0.3834 -0.1506 0.085 Uiso calc R 1 . . H
+    H8C 0.3507 0.2985 -0.0451 0.085 Uiso calc R 1 . . H
+loop_
+    _atom_site_aniso_label
+    _atom_site_aniso_U_11
+    _atom_site_aniso_U_22
+    _atom_site_aniso_U_33
+    _atom_site_aniso_U_12
+    _atom_site_aniso_U_13
+    _atom_site_aniso_U_23
+    C1 0.0406(9) 0.0395(9) 0.0331(9) 0.0016(6) 0.0155(7) -0.0038(7)
+    C2 0.0363(8) 0.0362(9) 0.0343(9) 0.0034(6) 0.0140(7) 0.0012(6)
+    C3 0.0407(9) 0.0373(9) 0.0321(8) 0.0057(6) 0.0127(7) -0.0013(6)
+    C4 0.0426(9) 0.0360(10) 0.0390(10) 0.0036(6) 0.0133(7) 0.0002(7)
+    C5 0.0619(11) 0.0401(10) 0.0458(11) 0.0038(8) 0.0233(9) 0.0096(8)
+    C6 0.0589(11) 0.0495(11) 0.0329(9) 0.0040(8) 0.0220(8) 0.0037(7)
+    N1 0.0513(9) 0.0498(9) 0.0440(9) -0.0005(7) 0.0205(7) -0.0127(7)
+    O1 0.0947(11) 0.0398(8) 0.0712(10) -0.0049(7) 0.0422(8) -0.0119(6)
+    O2 0.0944(12) 0.0747(10) 0.0433(8) -0.0013(8) 0.0362(8) -0.0161(7)
+    N2 0.0736(11) 0.0372(8) 0.0461(9) -0.0008(7) 0.0305(8) 0.0031(6)
+    C7 0.0828(15) 0.0515(11) 0.0369(10) 0.0074(9) 0.0259(10) 0.0006(8)
+    C8 0.0697(12) 0.0383(10) 0.0610(12) 0.0036(9) 0.0234(10) -0.0059(9)
+_geom_special_details
+;
+ All esds (except the esd in the dihedral angle between two l.s. planes)
+ are estimated using the full covariance matrix.  The cell esds are taken
+ into account individually in the estimation of esds in distances, angles
+ and torsion angles; correlations between esds in cell parameters are only
+ used when they are defined by crystal symmetry.  An approximate (isotropic)
+ treatment of cell esds is used for estimating esds involving l.s. planes.
+;
+loop_
+    _geom_bond_atom_site_label_1
+    _geom_bond_atom_site_label_2
+    _geom_bond_site_symmetry_2
+    _geom_bond_distance
+    _geom_bond_publ_flag
+    C1 C6 . 1.399(2) ?
+    C1 C2 . 1.423(2) ?
+    C1 N1 . 1.447(2) ?
+    C2 N2 . 1.359(2) ?
+    C2 C3 . 1.433(2) ?
+    C3 C4 . 1.388(2) ?
+    C3 C7 . 1.512(2) ?
+    C4 C5 . 1.417(3) ?
+    C4 C8 . 1.510(2) ?
+    C5 C6 . 1.365(2) ?
+    C5 H5 . 0.9300 ?
+    C6 H6 . 0.9300 ?
+    N1 O2 . 1.241(2) ?
+    N1 O1 . 1.242(2) ?
+    N2 H2A . 0.8742 ?
+    N2 H2B . 0.8742 ?
+    C7 H7A . 0.9600 ?
+    C7 H7B . 0.9600 ?
+    C7 H7C . 0.9600 ?
+    C8 H8A . 0.9600 ?
+    C8 H8B . 0.9600 ?
+    C8 H8C . 0.9600 ?
+loop_
+    _geom_angle_atom_site_label_1
+    _geom_angle_atom_site_label_2
+    _geom_angle_atom_site_label_3
+    _geom_angle_site_symmetry_1
+    _geom_angle_site_symmetry_3
+    _geom_angle
+    _geom_angle_publ_flag
+    C6 C1 C2 . . 121.16(14) ?
+    C6 C1 N1 . . 116.49(15) ?
+    C2 C1 N1 . . 122.33(15) ?
+    N2 C2 C1 . . 123.29(14) ?
+    N2 C2 C3 . . 119.06(14) ?
+    C1 C2 C3 . . 117.65(14) ?
+    C4 C3 C2 . . 120.05(15) ?
+    C4 C3 C7 . . 121.51(15) ?
+    C2 C3 C7 . . 118.44(14) ?
+    C3 C4 C5 . . 120.38(15) ?
+    C3 C4 C8 . . 121.56(16) ?
+    C5 C4 C8 . . 118.06(15) ?
+    C6 C5 C4 . . 120.56(15) ?
+    C6 C5 H5 . . 119.7 ?
+    C4 C5 H5 . . 119.7 ?
+    C5 C6 C1 . . 120.18(16) ?
+    C5 C6 H6 . . 119.9 ?
+    C1 C6 H6 . . 119.9 ?
+    O2 N1 O1 . . 121.30(15) ?
+    O2 N1 C1 . . 118.35(15) ?
+    O1 N1 C1 . . 120.34(15) ?
+    C2 N2 H2A . . 120.0 ?
+    C2 N2 H2B . . 120.0 ?
+    H2A N2 H2B . . 120.0 ?
+    C3 C7 H7A . . 109.5 ?
+    C3 C7 H7B . . 109.5 ?
+    H7A C7 H7B . . 109.5 ?
+    C3 C7 H7C . . 109.5 ?
+    H7A C7 H7C . . 109.5 ?
+    H7B C7 H7C . . 109.5 ?
+    C4 C8 H8A . . 109.5 ?
+    C4 C8 H8B . . 109.5 ?
+    H8A C8 H8B . . 109.5 ?
+    C4 C8 H8C . . 109.5 ?
+    H8A C8 H8C . . 109.5 ?
+    H8B C8 H8C . . 109.5 ?
+loop_
+    _geom_hbond_atom_site_label_D
+    _geom_hbond_atom_site_label_H
+    _geom_hbond_atom_site_label_A
+    _geom_hbond_site_symmetry_A
+    _geom_hbond_distance_DH
+    _geom_hbond_distance_HA
+    _geom_hbond_distance_DA
+    _geom_hbond_angle_DHA
+    N2 H2A O1 . 0.87 2.02 2.654(2) 128
+    N2 H2B O2 6_575 0.87 2.25 3.035(2) 150
+    C6 H6 O2 . 0.93 2.34 2.665(2) 100
+
