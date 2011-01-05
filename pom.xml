@@ -8,13 +8,13 @@
         <version>3-SNAPSHOT</version>
     </parent>
 
-	<groupId>cml</groupId>
-	<artifactId>cifxml</artifactId>
-	<packaging>jar</packaging>
-	<version>1.4-SNAPSHOT</version>
-	<name>CIFXML</name>
+	<groupId>org.xml-cml.cifxom</groupId>
+	<artifactId>cifxom</artifactId>
+	<version>1.5-SNAPSHOT</version>
+
+    <name>CIFXOM</name>
 	<url>http://www.xml-cml.org/</url>
-	<scm />
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
