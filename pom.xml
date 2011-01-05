@@ -24,7 +24,7 @@
     <repositories>
         <repository>
             <id>ucc-repo</id>
-            <url>https://wwmm.ch.cam.ac.uk/maven2</url>
+            <url>https://maven.ch.cam.ac.uk/maven2</url>
         </repository>
     </repositories>
 
