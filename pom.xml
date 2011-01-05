@@ -8,7 +8,7 @@
         <version>3-SNAPSHOT</version>
     </parent>
 
-	<groupId>org.xml-cml.cifxom</groupId>
+	<groupId>org.xml-cml</groupId>
 	<artifactId>cifxom</artifactId>
 	<version>1.5-SNAPSHOT</version>
 
