@@ -10,11 +10,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import nu.xom.Attribute;
-import nu.xom.Builder;
-import nu.xom.Document;
-import nu.xom.Element;
-import nu.xom.Elements;
+import nu.xom.*;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -459,5 +455,9 @@ public class CIF extends CIFElement {
 		}
 		addAttribute(new Attribute(ATTRIBUTE_ID, id));
 	}
-	
+
+    @Override
+    public CIF copy() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

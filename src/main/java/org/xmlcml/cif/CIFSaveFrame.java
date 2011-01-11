@@ -1,5 +1,7 @@
 package org.xmlcml.cif;
 
+import nu.xom.Node;
+
 import java.util.logging.Logger;
 
 /**
@@ -24,6 +26,10 @@ public class CIFSaveFrame extends AbstractBlock {
 		super(TAG);
 	}
 
+    public CIFSaveFrame(CIFSaveFrame old) {
+        super(old);
+    }
+
 	/**
 	 * create save frame with id.
 	 * 
@@ -33,4 +39,10 @@ public class CIFSaveFrame extends AbstractBlock {
 	public CIFSaveFrame(String id) throws CIFException {
 		super(TAG, id);
 	}
+
+    @Override
+    public CIFSaveFrame copy() {
+        return new CIFSaveFrame(this);
+    }
+
 }

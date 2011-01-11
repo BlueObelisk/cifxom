@@ -1,5 +1,7 @@
 package org.xmlcml.cif;
 
+import nu.xom.Node;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -46,6 +48,10 @@ public class CIFComment extends AbstractTextElement {
 		this();
 		setValue(value);
 	}
+
+    public CIFComment(CIFComment old) {
+        super(old);
+    }
 
 	/**
 	 * create a comment with given value.
@@ -130,4 +136,10 @@ public class CIFComment extends AbstractTextElement {
     		}
         }
 	}
+
+    @Override
+    public CIFComment copy() {
+        return new CIFComment(this);
+    }
+    
 }

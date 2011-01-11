@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
+import nu.xom.Node;
 
 /**
  * default implementation of an item.
@@ -238,4 +239,10 @@ public class CIFItem extends AbstractValueElement implements Comparable<CIFItem>
 		}
 		return value;
 	}
+
+    @Override
+    public CIFItem copy() {
+        return new CIFItem(this);
+    }
+    
 }

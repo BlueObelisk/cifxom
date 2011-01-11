@@ -113,4 +113,10 @@ public class CIFDataBlock extends AbstractBlock {
 	public Map<String, CIFSaveFrame> getSaveFrameMap() {
 		return saveFrameMap;
 	}
+
+    @Override
+    public CIFDataBlock copy() {
+        return new CIFDataBlock(this);
+    }
+
 }

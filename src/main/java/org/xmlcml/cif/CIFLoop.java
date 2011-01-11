@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Elements;
+import nu.xom.Node;
 
 /**
  * A CIF Loop.
@@ -770,4 +771,10 @@ public class CIFLoop extends CIFElement implements Comparable<CIFLoop> {
 		}
 		return result;
 	}
+
+    @Override
+    public CIFLoop copy() {
+        return new CIFLoop(this);
+    }
+    
 }

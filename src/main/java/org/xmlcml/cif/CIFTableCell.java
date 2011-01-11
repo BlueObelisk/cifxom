@@ -5,6 +5,7 @@ import java.io.Writer;
 import java.util.logging.Logger;
 
 import nu.xom.Element;
+import nu.xom.Node;
 
 /**
  * A cell in a row in a CIF Loop.
@@ -81,4 +82,9 @@ public class CIFTableCell extends AbstractValueElement {
 		w.write("</td>\n");
 	}
 
+    @Override
+    public CIFTableCell copy() {
+        return new CIFTableCell(this);
+    }
+    
 }

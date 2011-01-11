@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import nu.xom.Element;
 import nu.xom.Elements;
+import nu.xom.Node;
 
 /**
  * A row in a CIF Loop.
@@ -88,5 +89,10 @@ public class CIFRow extends CIFElement {
 		}
 		w.write("</tr>\n");
 	}
+
+    @Override
+    public CIFRow copy() {
+        return new CIFRow(this);
+    }
 
 }

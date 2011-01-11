@@ -377,4 +377,5 @@ public abstract class CIFElement extends Element implements CIFConstants {
 			}
 		}
 	}
+
 }
