@@ -258,9 +258,9 @@ public class CIFUtil implements CIFConstants {
         charMap.put("\\X","[Xi]");
         charMap.put("\\Y","[Psi]");
         charMap.put("\\Z","[Zeta]");
-// 32. Accents should be indicated by using the following codes before the letter to be modified (i.e. use
-//\'e for an acute e):
-//\' 	acute (é) 	\" 	umlaut (ü) 	\= 	overbar
+        // 32. Accents should be indicated by using the following codes before the letter to be modified (i.e. use
+        //\'e for an acute e):
+        //\' 	acute 	\" 	umlaut 	\= 	overbar
         charMap.put("\\'a","[aacute]");
         charMap.put("\\'e","[eacute]");
         charMap.put("\\'i","[iacute]");
@@ -281,7 +281,7 @@ public class CIFUtil implements CIFConstants {
         charMap.put("\\\"I","[Iuml]");
         charMap.put("\\\"O","[Ouml]");
         charMap.put("\\\"U","[Uuml]");
-//\` 	grave (à) 	\~ 	tilde (ñ) 	\. 	overdot
+//\` 	grave  	\~ 	tilde  	\. 	overdot
         charMap.put("\\`a","[agrave]");
         charMap.put("\\`e","[egrave]");
         charMap.put("\\`i","[igrave]");
@@ -294,7 +294,7 @@ public class CIFUtil implements CIFConstants {
         charMap.put("\\`U","[Ugrave]");
         charMap.put("\\~n","[ntilde]");
         charMap.put("\\~N","[Ntilde]");
-//\^ 	circumflex (â) 	\; 	ogonek 	\< 	hacek
+//\^ 	circumflex  	\; 	ogonek 	\< 	hacek
         charMap.put("\\^a","[acirc]");
         charMap.put("\\^e","[ecirc]");
         charMap.put("\\^i","[icirc]");
@@ -305,18 +305,18 @@ public class CIFUtil implements CIFConstants {
         charMap.put("\\^I","[Icirc]");
         charMap.put("\\^O","[Ocirc]");
         charMap.put("\\^U","[Ucirc]");
-//\, 	cedilla (ç) 	\> 	Hungarian umlaut 	\( 	breve
+//\, 	cedilla  	\> 	Hungarian umlaut 	\( 	breve
         charMap.put("\\,c","[ccedil]");
         charMap.put("\\,C","[Ccedil]");
 //These codes will always be followed by a non-whitespace character.
 //33. Other special alphabetic characters should be indicated as follows:
-//\%a 	a-ring (å) 	\?i 	dotless i 	\&s 	German "ss" (ß)
-//Capital letters may also be used in these codes, so an ångström symbol (Å) may be given as \%A.
+//\%a 	a-ring  	\?i 	dotless i 	\&s 	German "ss"
+//Capital letters may also be used in these codes, so an Angstrom symbol may be given as \%A.
         charMap.put("\\%a","[aring]");
         charMap.put("\\%A","[Aring]");
         charMap.put("\\&s","[ss]");
         charMap.put("\\%S","[SS]");
-//\/o 	o-slash (ø) 	\/l 	Polish l (tex2html_wrap120) 	\/d 	barred d
+//\/o 	o-slash  	\/l 	Polish l (tex2html_wrap120) 	\/d 	barred d
         charMap.put("\\/o","[oslash]");
         charMap.put("\\/O","[OSlash]");
         charMap.put("\\/l","[lslash]");
@@ -325,8 +325,8 @@ public class CIFUtil implements CIFConstants {
         charMap.put("\\/D","[Dbar]");
 //35. Some other codes are accepted by convention. These are:
 /*--
-\% 	degree (°) 	\\times 	×
--- 	dash 	+- 	±
+\% 	degree  	\\times 	
+-- 	dash 	+-
 --- 	single bond 	-+ 	tex2html_wrap_inline104
 \\db 	double bond 	\\square 	square
 \\tb 	triple bond 	\\neq 	tex2html_wrap_inline108
