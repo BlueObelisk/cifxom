@@ -458,6 +458,7 @@ public class CIF extends CIFElement {
 
     @Override
     public CIF copy() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return new  CIF(this);
     }
+    
 }
