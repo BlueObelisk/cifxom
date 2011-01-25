@@ -10,3 +10,13 @@
 # subversion
 ^\.svn/
 /\.svn/
+
+#Eclipse
+syntax: regexp
+^\.classpath$
+syntax: regexp
+^\.project$
+syntax: regexp
+^\.settings$
+syntax: regexp
+^.settings/.*
