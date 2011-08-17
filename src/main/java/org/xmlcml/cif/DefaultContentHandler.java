@@ -172,8 +172,9 @@ public class DefaultContentHandler implements CIFContentHandler {
 	 * @throws CIFException
 	 *             dataBlock has no id
 	 */
-	public void startDataBlock(String id) throws CIFException {
+	public CIFDataBlock startDataBlock(String id) throws CIFException {
 		outputString("Adding data block: " + id);
+		return null;
 	}
 
 	/**

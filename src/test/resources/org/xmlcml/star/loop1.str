@@ -1,0 +1,23 @@
+data_saveloop
+
+save_entry_information
+_Entry.Sf_category entry_information
+
+loop_
+_Entry_author.Ordinal
+_Entry_author.Given_name
+1 Q
+2 I
+stop_
+
+_Entry.Sf_category1 entry_information
+loop_
+_Entry_author.Z
+_Entry_author.Y
+1 a
+2 b
+stop_
+
+save_
+
+

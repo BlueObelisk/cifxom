@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cif><datablock id="saveloop"><saveframe id="entry_information"><item name="_entry.sf_category">entry_information</item><loop names="_Entry_author.Ordinal _Entry_author.Given_name"><row><cell>1</cell><cell>Q</cell></row><row><cell>2</cell><cell>I</cell></row></loop><item name="_entry.sf_category1">entry_information</item><loop names="_Entry_author.Z _Entry_author.Y"><row><cell>1</cell><cell>a</cell></row><row><cell>2</cell><cell>b</cell></row></loop></saveframe></datablock></cif>
