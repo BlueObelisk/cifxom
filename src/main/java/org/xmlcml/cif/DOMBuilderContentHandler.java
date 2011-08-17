@@ -151,10 +151,11 @@ public class DOMBuilderContentHandler extends DefaultContentHandler {
 	 * @throws CIFException
 	 *             dataBlock has no id
 	 */
-	public void startDataBlock(String id) throws CIFException {
+	public CIFDataBlock startDataBlock(String id) throws CIFException {
 
 		dataBlock = new CIFDataBlock(id);
 		root.add(dataBlock);
+		return dataBlock;
 	}
 
 	/**

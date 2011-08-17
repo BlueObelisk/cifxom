@@ -119,7 +119,7 @@ public interface CIFContentHandler extends CIFConstants {
 	 * @throws CIFException
 	 *             dataBlock has no id
 	 */
-	void startDataBlock(String id) throws CIFException;
+	CIFDataBlock startDataBlock(String id) throws CIFException;
 
 	/**
 	 * Receive notification of addition of a CIFItem.

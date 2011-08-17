@@ -1,20 +1,24 @@
 package org.xmlcml.cif;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
-
 import nu.xom.Document;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 /**
  * default parser.
@@ -43,8 +47,10 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	int MAXTRY = 5;
 
 
-	private static final Logger LOG = Logger.getLogger(CIFParser.class
-			.getName());
+	private static final Logger LOG = Logger.getLogger(CIFParser.class);
+	static {
+		LOG.setLevel(Level.TRACE);
+	}
 
 	static String quoteString(String token) {
 		if (token.charAt(0) == C_UNDER || token.indexOf(C_SPACE) != -1
@@ -69,6 +75,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	boolean checkDuplicates = false;
 	boolean heuristicCorrection = true;
 	boolean renameBlockIds = false;
+	boolean useStar = false;
 	int blockIdCount = 1;
 	protected CIFErrorHandler errorHandler;
 	boolean inItem = false;
@@ -98,6 +105,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	char[] tokenChars = new char[MAXTOKLENGTH];
 	int tokenLength = 0;
 
+
 	/**
 	 * create default parser.
 	 */
@@ -119,7 +127,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		checkDuplicates = false;
 		contentHandler.setCheckDuplicates(checkDuplicates);
 
-		LOG.setLevel(Level.WARNING);
+//		LOG.setLevel(Level.WARN);
 	}
 
 	/**
@@ -132,6 +140,10 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		skipErrors = skip;
 		if (errorHandler != null)
 			errorHandler.setSkipErrors(skip);
+	}
+
+	public void setUseStar(boolean star) {
+		useStar = star;
 	}
 
 	/**
@@ -182,9 +194,9 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	}
 
 	private void addToken(char quoteChar) throws CIFException {
-		String s = new String(tokenChars, 0, tokenLength);
+		String token = new String(tokenChars, 0, tokenLength);
 		try {
-			readToken(quoteChar, s);
+			processToken(quoteChar, token);
 		} catch (CIFException cifex) {
 			throw new CIFException(cifex + " at line " + lineNumber);
 		}
@@ -216,7 +228,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 
 	private void processLoop() throws CIFException {
 		if (debug) {
-			LOG.fine("processing loop");
+			LOG.trace("processing loop");
 		}
 		if (loop == null) {
 			errorHandler.error("null loop", this);
@@ -237,7 +249,11 @@ public class CIFParser implements CIFConstants, CIFLocator {
 
 		loop.setValues(loopValueList, nameList.size());
 		// add loop; handler may wish to check for duplicates
-		contentHandler.addLoop(loop);
+		if (saveFrame != null) {
+			saveFrame.add(loop);
+		} else {
+			contentHandler.addLoop(loop);
+		}
 	}
 
 	/**
@@ -303,37 +319,30 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	}
 
 	/**
-	 * Parse a reader. Closes the reader once the parsing has finished.
+	 * Parse a buffered reader. Closes the reader once the
+	 * parsing has finished.
 	 * 
-	 * @param reader
+	 * @param bufferedReader
 	 * @throws CIFException
 	 * @throws IOException
 	 * @return document
 	 */
-	public Document parse(Reader reader) throws CIFException,
+	public Document parse(BufferedReader bufferedReader) throws CIFException,
 	IOException {
-        BufferedReader bufferedReader = new BufferedReader(reader);
 		Document document = null;
-		try {
+//		try {
 			// read into buffer so we can do some heuristics
-			List<String> lines = new ArrayList<String>();
-			while (true) {
-				line = bufferedReader.readLine();
-				if (line == null) {
-					break;
-				}
-				// only trim end
-				line = CIFUtil.trimTrail(line);
-				line = CIFUtil.stripISOControls(line);
-				//			System.out.println(line);
-				addLine(lines);
-			}
+			List<String> lines = readLines(bufferedReader);
 			int retry = MAXTRY;
+			if (debug) {
+				LOG.debug("Lines read: "+lines.size());
+			}
 			while (true) {
 				try {
 					document = parseLines(lines);
 					break;
 				} catch (CIFException e) {
+					System.err.println("CIFException "+e);
 					if (heuristicCorrection) {
 						fixLine(lines, lineNumber-1, e);
 						retry--;
@@ -345,10 +354,27 @@ public class CIFParser implements CIFConstants, CIFLocator {
 					throw new CIFException("Could not fix errors...");
 				}
 			}
-		} finally {
-			IOUtils.closeQuietly(bufferedReader);
-		}
+//		} finally {
+		IOUtils.closeQuietly(bufferedReader);
+//		}
 		return document;
+	}
+
+	private List<String> readLines(BufferedReader bufferedReader)
+			throws IOException {
+		List<String> lines = new ArrayList<String>();
+		while (true) {
+			line = bufferedReader.readLine();
+			if (line == null) {
+				break;
+			}
+			// only trim end
+			line = CIFUtil.trimTrail(line);
+			line = CIFUtil.stripISOControls(line);
+			//			System.out.println(line);
+			addLine(lines);
+		}
+		return lines;
 	}
 
 	private void addLine(List<String> lines) {
@@ -408,51 +434,60 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		Document document = contentHandler.startDocument();
 
 		lineNumber = 0;
-		boolean inSemiColon = false;
+		inSemiColon = false;
 		for (String line : lines) {
-			lineNumber++;
-			// line end is always white
-			inWhite = true;
-			// semi-colon quoted
-			if (inSemiColon) {
-				// end of semi-colon text?
-				if (line.length() > 0 && line.charAt(0) == C_SEMI) {
-					try {
-						readToken(C_SEMI, textBuffer.toString());
-					} catch (CIFException cifex) {
-						errorHandler.error(cifex.getMessage(), this);
-					}
-					inSemiColon = false;
-					line = line.substring(1);
-					tokenize(line);
-					// do we save rest of line?
-				} else {
-					textBuffer.append(line);
-					textBuffer.append(C_NL);
-				}
-				// skip empty lines except in semiColons
-			} else if (line.length() == 0) {
-				processComments();
-				// new comment
-			} else if (line.charAt(0) == C_HASH) {
-				addComment(0, line);
-				// new semi-colon
-			} else if (line.charAt(0) == C_SEMI) {
-				processComments();
-				inSemiColon = true;
-				textBuffer = new StringBuffer();
-				textBuffer.append(line.substring(1));
-				textBuffer.append(C_NL);
-			} else {
-				processComments();
-				tokenize(line);
-			}
+			processLine(line);
 		}
-		readToken(C_NULL, null);
+		processToken(C_NULL, null);
 		contentHandler.endDocument();
 		// ((CIF)document.getRootElement()).debug()
 		return document;
 
+	}
+
+	private void processLine(String line) throws CIFException {
+		lineNumber++;
+		// line end is always white
+		inWhite = true;
+		// semi-colon quoted
+		if (inSemiColon) {
+			line = processSemiColonComment(line);
+		} else if (line.length() == 0) {
+			processComments();
+			// new comment
+		} else if (line.charAt(0) == C_HASH) {
+			addComment(0, line);
+			// new semi-colon
+		} else if (line.charAt(0) == C_SEMI) {
+			processComments();
+			inSemiColon = true;
+			textBuffer = new StringBuffer();
+			textBuffer.append(line.substring(1));
+			textBuffer.append(C_NL);
+		} else {
+			processComments();
+			tokenize(line);
+		}
+	}
+
+	private String processSemiColonComment(String line) throws CIFException {
+		// end of semi-colon text?
+		if (line.length() > 0 && line.charAt(0) == C_SEMI) {
+			try {
+				processToken(C_SEMI, textBuffer.toString());
+			} catch (CIFException cifex) {
+				errorHandler.error(cifex.getMessage(), this);
+			}
+			inSemiColon = false;
+			line = line.substring(1);
+			tokenize(line);
+			// do we save rest of line?
+		} else {
+			textBuffer.append(line);
+			textBuffer.append(C_NL);
+		}
+		// skip empty lines except in semiColons
+		return line;
 	}
 
 	// ========================== parsing routines =========================
@@ -497,9 +532,9 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	 * @param value
 	 * @exception CIFException
 	 */
-	void readToken(char quoteChar, String value) throws CIFException {
+	void processToken(char quoteChar, String value) throws CIFException {
 		if (debug) {
-			LOG.fine("Tok: " + value);
+			LOG.trace("Tok: " + value);
 		}
 		String keyword = "";
 		boolean finishedParse = false;
@@ -510,80 +545,16 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		}
 		// start
 		if (start) {
-			if (!(keyword.startsWith(S_DATA))) {
-				if (!skipHeader) {
-					errorHandler.error("Must start CIF with " + S_DATA
-							+ "; not: " + line, this);
-				} else if (!startHeader) {
-					LOG.fine("Skipped header starting with: " + line);
-					startHeader = true;
-				}
-			} else {
-				start = false;
-			}
-			// looking for item value
+			parseStartToken(keyword);
 		} else if (inItem) {
-			if (value.equals("") || value.charAt(0) == C_UNDER
-					&& quoteChar == C_NULL) {
-				errorHandler.error(
-						Error.UNQUOTED_NO_UNDERSCORE.value,
-						this);
-			}
-			if (finishedParse || keyword.equals(S_LOOP)
-					|| keyword.startsWith(S_SAVE) || keyword.startsWith(S_DATA)) {
-				errorHandler.error("Missing item value", this);
-			}
-			item.setTextValue(value);
-			ParserMessage m = contentHandler.addItem(item);
-			if (m != null) {
-				errorHandler.error(m.getMessage(), this);
-			}
-			inItem = false;
+			parseItem(quoteChar, value, keyword, finishedParse);
 		} else if (inLoop) {
-			// add loop names
-			if (!finishedParse && quoteChar == C_NULL
-					&& value.charAt(0) == C_UNDER) {
-				if (loopNameList != null) {
-					if (debug) {
-						LOG.fine("+++++++ Adding loop name: " + value);
-					}
-					loopNameList.add(value);
-				} else {
-					// new item
-					processLoop();
-					inLoop = false;
-					createNewItem(value);
-				}
-				// end of loop
-			} else if (finishedParse || keyword.equals(S_LOOP)
-					|| keyword.startsWith(S_SAVE) || keyword.startsWith(S_DATA)) {
-				inLoop = false;
-				processLoop();
-				// a value
-			} else {
-				// start of values?
-				if (loopNameList != null) {
-					LOG.info("-------------adding loop name "
-							+ loopNameList.size());
-					loop.setNames(loopNameList);
-					List<String> namexx = loop.getNameList();
-					LOG.info("........." + namexx.size());
-					if (debug) {
-						LOG.info("creating new loop with name count:"
-								+ loopNameList.size());
-					}
-					loopValueList = new ArrayList<String>();
-					loopNameList = null;
-				}
-				loopValueList.add(value);
-				if (debug) {
-					LOG.info("_____added value to loop size("
-							+ loopValueList.size() + "):" + value);
-				}
-			}
+			parseLoop(quoteChar, value, keyword, finishedParse);
 			// process later
-		} else if (finishedParse || keyword.equals(S_LOOP)
-				|| keyword.startsWith(S_SAVE) || keyword.startsWith(S_DATA)) {
+		} else if (finishedParse ||
+				keyword.equals(S_LOOP) ||
+				keyword.startsWith(S_SAVE) ||
+				keyword.startsWith(S_DATA)) {
 			;
 			// must be an item
 		} else {
@@ -595,55 +566,180 @@ public class CIFParser implements CIFConstants, CIFLocator {
 			loop = new CIFLoop();
 			loopNameList = new ArrayList<String>();
 		} else if (keyword.startsWith(S_DATA)) {
-			if (inSave) {
-				errorHandler.fatalError("Unexpected " + S_DATA
-						+ " in saveFrame", this);
-			}
-			if (keyword.equals(S_DATA)) {
-				errorHandler.fatalError(Error.DATABLOCK_NO_ID.value, this);
-			}
-
-			String dataId = "";
-			if (renameBlockIds) {
-				// rename the block ID to an incremental integer
-				dataId = String.valueOf(blockIdCount);
-				blockIdCount++;
-			} else {
-				// use the id provided in the CIF
-				dataId = value.substring(5);
-			}
-			contentHandler.startDataBlock(dataId);
-			loopMap = new HashMap<String, CIFLoop>();
-			itemMap = new HashMap<String, String>();
-
-		} else if (keyword.equals(S_STOP) || keyword.equals(S_GLOBAL)) {
-			errorHandler.fatalError("STAR keyword not allowed in CIF: "
+			parseDataKeyword(value, keyword);
+		} else if (keyword.equals(S_STOP)) {
+//			endLoopInSaveFrame(keyword);
+		} else if (keyword.equals(S_GLOBAL)) {
+			errorHandler.fatalError("STAR keyword global_ not allowed in CIF: "
 					+ keyword, this);
 		} else if (keyword.equals(S_SAVE)) {
-			if (!inSave) {
-				errorHandler.fatalError("Unexpected " + S_SAVE, this);
-			}
-			inSave = false;
+			closeSaveFrame();
 		} else if (keyword.startsWith(S_SAVE)) {
-			if (inSave) {
-				errorHandler.fatalError("Nested saveFrames forbidden", this);
-			}
-			String saveId = value.substring(S_SAVE.length());
-			if (saveId.equals(S_EMPTY)) {
-				errorHandler.fatalError("saveFrame requires ID", this);
-			}
-			Map<String, CIFSaveFrame> saveFrameMap = dataBlock
-			.getSaveFrameMap();
-			if (saveFrameMap.containsKey(saveId)) {
-				errorHandler.fatalError(
-						"saveFrame ID not unique within dataBlock: " + saveId,
-						this);
-			}
-			saveFrame = new CIFSaveFrame(saveId);
-			saveFrame.setId(saveId);
-			dataBlock.add(saveFrame);
-			inSave = true;
+			openSaveFrame(value);
 		}
+	}
+
+	private void parseLoop(char quoteChar, String value, String keyword,
+			boolean finishedParse) throws CIFException {
+		// add loop names
+		if (!finishedParse && quoteChar == C_NULL && value.startsWith(S_UNDER)) {
+			if (loopNameList != null) {
+				if (debug) {
+					LOG.trace("+++++++ Adding loop name: " + value);
+				}
+				loopNameList.add(value);
+			} else {
+				// new item
+				processLoop();
+				inLoop = false;
+				createNewItem(value);
+			}
+			// end of loop
+		} else if (keyword.equals(S_STOP)) {
+			if (saveFrame == null) {
+				throw new RuntimeException("stop_ must be after loop_");
+			}
+			inLoop = false;
+			processLoop();
+//			saveFrame = null;
+		} else if (finishedParse ||
+				keyword.equals(S_LOOP) ||
+				keyword.startsWith(S_SAVE) ||
+				keyword.startsWith(S_DATA)) {
+			inLoop = false;
+			processLoop();
+			// a value
+		} else {
+			// start of values?
+			if (loopNameList != null) {
+				if (debug) {
+					LOG.info("-------------adding loop name "
+						+ loopNameList.size());
+				}
+				loop.setNames(loopNameList);
+				List<String> namexx = loop.getNameList();
+				
+				if (debug) {
+					LOG.info("........." + namexx.size());
+					LOG.info("creating new loop with name count:"
+							+ loopNameList.size());
+				}
+				loopValueList = new ArrayList<String>();
+				loopNameList = null;
+			}
+			loopValueList.add(value);
+			if (debug) {
+				LOG.info("_____added value to loop size("
+						+ loopValueList.size() + "):" + value);
+			}
+		}
+	}
+
+	private void parseItem(char quoteChar, String value, String keyword,
+			boolean finishedParse) throws CIFException {
+		if (value.equals("") || value.charAt(0) == C_UNDER
+				&& quoteChar == C_NULL) {
+			errorHandler.error(
+					Error.UNQUOTED_NO_UNDERSCORE.value,
+					this);
+		}
+		if (finishedParse || keyword.equals(S_LOOP)
+				|| keyword.startsWith(S_SAVE) || keyword.startsWith(S_DATA)) {
+			errorHandler.error("Missing item value", this);
+		}
+		item.setTextValue(value);
+		if (saveFrame != null) {
+			saveFrame.add(item, checkDuplicates);
+//			inSave = false;
+		} else {
+			ParserMessage m = contentHandler.addItem(item);
+			if (m != null) {
+				errorHandler.error(m.getMessage(), this);
+			}
+		}
+		inItem = false;
+	}
+
+	private void parseStartToken(String keyword) throws CIFException {
+		if (!(keyword.startsWith(S_DATA))) {
+			if (!skipHeader) {
+				errorHandler.error("Must start CIF with " + S_DATA
+						+ "; not: " + line, this);
+			} else if (!startHeader) {
+				LOG.trace("Skipped header starting with: " + line);
+				startHeader = true;
+			}
+		} else {
+			start = false;
+		}
+		// looking for item value
+	}
+
+	private void endLoopInSaveFrame(String keyword) throws CIFException {
+		if (!useStar) {
+			errorHandler.fatalError("STAR keyword stop_ not allowed in CIF: "
+					+ keyword, this);
+		}
+		if (inLoop) {
+			if (saveFrame != null) {
+				saveFrame.add(loop);
+			}
+			inLoop = false;
+		} else {
+			errorHandler.fatalError("STAR keyword stop_ must be after loop_", this);
+		}
+	}
+
+	private void openSaveFrame(String value) throws CIFException {
+		if (inSave) {
+			errorHandler.fatalError("Nested saveFrames forbidden", this);
+		}
+		String saveId = value.substring(S_SAVE.length());
+		if (saveId.equals(S_EMPTY)) {
+			errorHandler.fatalError("saveFrame requires ID", this);
+		}
+		Map<String, CIFSaveFrame> saveFrameMap = dataBlock.getSaveFrameMap();
+		if (saveFrameMap.containsKey(saveId)) {
+			errorHandler.fatalError(
+					"saveFrame ID not unique within dataBlock: " + saveId,
+					this);
+		}
+		saveFrame = new CIFSaveFrame(saveId);
+		saveFrame.setId(saveId);
+		dataBlock.add(saveFrame);
+		inSave = true;
+	}
+
+	private void closeSaveFrame() throws CIFException {
+		if (saveFrame == null) {
+			errorHandler.fatalError("Unexpected " + S_SAVE, this);
+		}
+		inSave = false;
+		saveFrame = null;
+	}
+
+	private void parseDataKeyword(String value, String keyword)
+			throws CIFException {
+		if (inSave) {
+			errorHandler.fatalError("Unexpected " + S_DATA
+					+ " in saveFrame", this);
+		}
+		if (keyword.equals(S_DATA)) {
+			errorHandler.fatalError(Error.DATABLOCK_NO_ID.value, this);
+		}
+
+		String dataId = "";
+		if (renameBlockIds) {
+			// rename the block ID to an incremental integer
+			dataId = String.valueOf(blockIdCount);
+			blockIdCount++;
+		} else {
+			// use the id provided in the CIF
+			dataId = value.substring(5);
+		}
+		dataBlock = contentHandler.startDataBlock(dataId);
+		loopMap = new HashMap<String, CIFLoop>();
+		itemMap = new HashMap<String, String>();
 	}
 
 	/**
@@ -729,24 +825,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 				}
 				// within a quote
 			} else if (quoteChar == C_APOS || quoteChar == C_QUOT) {
-				// possible end of quote
-				if (c == quoteChar) {
-					// next character is whitespace, end of quote
-					if (i + 1 == l
-							|| Character.isWhitespace(line.charAt(i + 1))) {
-						// FIXME this may be wrong
-						addToken(quoteChar);
-						quoteChar = ' ';
-						// new token
-						tokenLength = 0;
-						inWhite = true;
-					} else {
-						tokenChars[tokenLength++] = c;
-					}
-				} else {
-					tokenChars[tokenLength++] = c;
-				}
-				// within an ordinary token
+				possibleEndOfQuote(line, l, i, c);
 			} else {
 				if (Character.isWhitespace(c)) {
 					addToken(C_NULL);
@@ -764,6 +843,28 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		if (tokenLength != 0) {
 			addToken(C_NULL);
 		}
+	}
+
+	private void possibleEndOfQuote(String line, int l, int i, char c)
+			throws CIFException {
+		// possible end of quote
+		if (c == quoteChar) {
+			// next character is whitespace, end of quote
+			if (i + 1 == l
+					|| Character.isWhitespace(line.charAt(i + 1))) {
+				// FIXME this may be wrong
+				addToken(quoteChar);
+				quoteChar = ' ';
+				// new token
+				tokenLength = 0;
+				inWhite = true;
+			} else {
+				tokenChars[tokenLength++] = c;
+			}
+		} else {
+			tokenChars[tokenLength++] = c;
+		}
+		// within an ordinary token
 	}
 
 	/** get error handler.
