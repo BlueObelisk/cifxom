@@ -1014,7 +1014,7 @@ public class CIFUtil implements CIFConstants {
 		int l = s.length();
 		for (int i = 0; i < l; i++) {
 			char ch = s.charAt(i);
-			if (!Character.isISOControl(ch)) {
+			if (Character.isWhitespace(ch) || !Character.isISOControl(ch)) {
 				sb.append(ch);
 			}
 		}

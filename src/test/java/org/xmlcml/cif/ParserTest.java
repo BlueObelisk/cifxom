@@ -2,9 +2,11 @@ package org.xmlcml.cif;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -218,14 +220,14 @@ public class ParserTest extends CIFTestBase {
 		Assert.assertNotNull("there should be files in " + exampleDir, files);
 		for (int i = 0; i < files.length; i++) {
             if (i == maxCount) {
-            	LOG.debug("FINISHED AFTER: "+maxCount+" FILES");
+//            	LOG.debug("FINISHED AFTER: "+maxCount+" FILES");
                 break;
             }
 			File file = files[i];
-			LOG.debug("CIF: "+file);
+			LOG.trace("CIF: "+file);
 			if (file.getName().endsWith(".cif")) {
 				if (failOnError) {
-					LOG.debug("testing: " + file);
+					LOG.trace("testing: " + file);
 				}
 				if (!parse(file, checkDuplicates)) {
 					if (!failOnError) {
@@ -304,6 +306,24 @@ public class ParserTest extends CIFTestBase {
 			ee.printStackTrace();
 			Assert.fail("should never throw " + ee);
 		}
-		cif.debug();
+//		cif.debug();
     }
+    
+    @Test
+    public void testTabs() {
+		CIFParser parser = new CIFParser();
+		CIF cif = null;
+		try {
+			cif = (CIF) parser.parse(new BufferedReader(new FileReader("src/test/resources/org/xmlcml/cif/tabFile.cif"))).getRootElement();
+		} catch (CIFException e) {
+			e.printStackTrace();
+			Assert.fail("should never throw " + e);
+		} catch (Exception ee) {
+			ee.printStackTrace();
+			Assert.fail("should never throw " + ee);
+		}
+//		cif.debug();
+    }
+    
+    
 }
