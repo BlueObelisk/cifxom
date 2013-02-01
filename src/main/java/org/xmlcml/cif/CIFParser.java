@@ -198,7 +198,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		try {
 			processToken(quoteChar, token);
 		} catch (CIFException cifex) {
-			throw new CIFException(cifex + " at line " + lineNumber);
+			throw new CIFException(cifex + " at line " + lineNumber, cifex);
 		}
 		tokenLength = 0;
 	}
@@ -342,6 +342,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 					document = parseLines(lines);
 					break;
 				} catch (CIFException e) {
+					e.printStackTrace();
 					System.err.println("CIFException "+e);
 					if (heuristicCorrection) {
 						fixLine(lines, lineNumber-1, e);
@@ -446,6 +447,8 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	}
 
 	private void processLine(String line) throws CIFException {
+		// replace all tabs
+		line = line.replace(""+C_TAB, ""+C_SPACE);
 		lineNumber++;
 		// line end is always white
 		inWhite = true;
@@ -835,7 +838,8 @@ public class CIFParser implements CIFConstants, CIFLocator {
 				}
 			}
 		}
-		if (quoteChar != C_SPACE) {
+		if (!Character.isWhitespace(quoteChar)) {
+//		if (quoteChar != C_SPACE) {
 			errorHandler.fatalError(Error.UNTERMINATED_QUOTE.value+" (" + quoteChar
 					+ ") at line: " + lineNumber, this);
 		}
