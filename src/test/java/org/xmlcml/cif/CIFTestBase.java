@@ -4,12 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-import junit.framework.Assert;
 import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.canonical.Canonicalizer;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
 
 /**
