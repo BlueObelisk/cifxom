@@ -16,7 +16,6 @@ import java.util.regex.Pattern;
 
 import nu.xom.Document;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -330,34 +329,31 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	public Document parse(BufferedReader bufferedReader) throws CIFException,
 	IOException {
 		Document document = null;
-//		try {
-			// read into buffer so we can do some heuristics
-			List<String> lines = readLines(bufferedReader);
-			int retry = MAXTRY;
-			if (debug) {
-				LOG.debug("Lines read: "+lines.size());
-			}
-			while (true) {
-				try {
-					document = parseLines(lines);
-					break;
-				} catch (CIFException e) {
-					e.printStackTrace();
-					System.err.println("CIFException "+e);
-					if (heuristicCorrection) {
-						fixLine(lines, lineNumber-1, e);
-						retry--;
-					} else {
-						throw e;
-					}
-				} 
-				if (retry == 0) {
-					throw new CIFException("Could not fix errors...");
+		// read into buffer so we can do some heuristics
+		List<String> lines = readLines(bufferedReader);
+		int retry = MAXTRY;
+		if (debug) {
+			LOG.debug("Lines read: "+lines.size());
+		}
+		while (true) {
+			try {
+				document = parseLines(lines);
+				break;
+			} catch (CIFException e) {
+				e.printStackTrace();
+				System.err.println("CIFException "+e);
+				if (heuristicCorrection) {
+					fixLine(lines, lineNumber-1, e);
+					retry--;
+				} else {
+					throw e;
 				}
 			}
-//		} finally {
-		IOUtils.closeQuietly(bufferedReader);
-//		}
+			if (retry == 0) {
+				throw new CIFException("Could not fix errors...");
+			}
+		}
+		bufferedReader.close();
 		return document;
 	}
 
