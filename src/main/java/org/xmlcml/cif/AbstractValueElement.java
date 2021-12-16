@@ -168,7 +168,7 @@ public abstract class AbstractValueElement extends AbstractTextElement {
 		String dd = this.getAttributeValue(CIFAttribute.SU.value);
 		if (dd != null) {
 			try {
-				su = new Double(dd);
+				su = Double.valueOf(dd);
 			} catch (NumberFormatException nfe) {
 				throw new RuntimeException("bad su value: " + nfe);
 			}
@@ -187,7 +187,7 @@ public abstract class AbstractValueElement extends AbstractTextElement {
 			String value = this.getAttributeValue(CIFAttribute.NUMERICVALUE.value);
             if (value != null) {
     			try {
-    				d = new Double(value);
+    				d = Double.valueOf(value);
     			} catch (NumberFormatException nfe) {
     				throw new RuntimeException("expected double: " + nfe);
     			}

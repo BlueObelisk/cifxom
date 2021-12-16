@@ -176,7 +176,7 @@ public class CIFUtil implements CIFConstants {
         }
         su = value.substring(idx + 1, value.length() - 1);
         try {
-            new Double(su);
+            Double.valueOf(su);
         } catch (NumberFormatException nfe) {
             su = null;
         }
@@ -809,8 +809,8 @@ public class CIFUtil implements CIFConstants {
 				try {
 					values = new double[2];
 					sv = value.substring(0, idx0);
-					values[0] = new Double(sv);
-					values[1] = new Double(value.substring(idx0+1, idx1));
+					values[0] = Double.parseDouble(sv);
+					values[1] = Double.parseDouble(value.substring(idx0+1, idx1));
 				} catch (NumberFormatException e) {
 					throw new RuntimeException("cannot parse as value(su): "+e);
 				}
@@ -821,7 +821,7 @@ public class CIFUtil implements CIFConstants {
 				}
 			} else {
 				try {
-					double d = new Double(value);
+					double d = Double.parseDouble(value);
 					values = new double[2];
 					values[0] = d;
 					values[1] =0;
