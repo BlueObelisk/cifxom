@@ -11,12 +11,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /** some CIFUtils.
 */
 public class CIFUtil implements CIFConstants {
-	private static Logger LOG = Logger.getLogger(CIFUtil.class);
+	private static Logger LOG = LogManager.getLogger(CIFUtil.class);
     /** messages */
     public enum Message {
         /** not yet implemented */

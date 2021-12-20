@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="A1" target="SYSTEM_OUT">
+      <PatternLayout>
+        <Pattern>%-4r [%t] %-5p %c %x - %m%n</Pattern>
+      </PatternLayout>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="A1"/>
+    </Root>
+    <Logger name="org.xmlcml.cif.CIF" level="WARN"/>
+    <Logger name="org.xmlcml.cif.CIFParser" level="TRACE"/>
+    <Logger name="log4j.logger.uk.ac.cam" level="DEBUG"/>
+    <Logger name="log4j.logger.org.xmlcml.cml.converters.molecule.cml.CML2CMLConverter" level="ALL"/>
+  </Loggers>
+</Configuration>
