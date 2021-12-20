@@ -8,7 +8,9 @@ import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.canonical.Canonicalizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -56,7 +58,7 @@ public class CIFTestBase implements CIFConstants {
     public final static String DICT_RESOURCE = EXAMPLES_RESOURCE + C_SLASH
             + "dict";
 
-	static Logger LOG = Logger.getLogger(CIFTestBase.class);
+	static Logger LOG = LogManager.getLogger(CIFTestBase.class);
 	
 //	public final static String TEST_DIR = "simple";
 
