@@ -16,8 +16,8 @@ import java.util.regex.Pattern;
 
 import nu.xom.Document;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * default parser.
@@ -46,10 +46,7 @@ public class CIFParser implements CIFConstants, CIFLocator {
 	int MAXTRY = 5;
 
 
-	private static final Logger LOG = Logger.getLogger(CIFParser.class);
-	static {
-		LOG.setLevel(Level.TRACE);
-	}
+	private static final Logger LOG = LogManager.getLogger(CIFParser.class);
 
 	static String quoteString(String token) {
 		if (token.charAt(0) == C_UNDER || token.indexOf(C_SPACE) != -1
@@ -125,8 +122,6 @@ public class CIFParser implements CIFConstants, CIFLocator {
 		startHeader = false;
 		checkDuplicates = false;
 		contentHandler.setCheckDuplicates(checkDuplicates);
-
-//		LOG.setLevel(Level.WARN);
 	}
 
 	/**

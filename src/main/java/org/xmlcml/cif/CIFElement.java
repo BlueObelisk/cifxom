@@ -12,7 +12,8 @@ import nu.xom.Node;
 import nu.xom.ProcessingInstruction;
 import nu.xom.Text;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * default implementation of base class for all CIF instance components in a
@@ -23,7 +24,7 @@ import org.apache.log4j.Logger;
 public abstract class CIFElement extends Element implements CIFConstants {
 
     @SuppressWarnings("unused")
-	private static Logger LOG = Logger.getLogger(CIFElement.class);
+	private static Logger LOG = LogManager.getLogger(CIFElement.class);
     /** allowed attributes in XML representation.*/
     public enum CIFAttribute {
         /** item name.*/

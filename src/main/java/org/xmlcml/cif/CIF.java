@@ -12,8 +12,8 @@ import java.util.List;
 
 import nu.xom.*;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Holds a CIF document as an object
@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  */
 public class CIF extends CIFElement {
 
-	private static Logger LOG = Logger.getLogger(CIF.class);
+	private static Logger LOG = LogManager.getLogger(CIF.class);
 
 	/**
 	 * tag.
@@ -42,7 +42,6 @@ public class CIF extends CIFElement {
 	 */
 	public CIF() {
 		super(TAG);
-		LOG.setLevel(Level.WARN);
 		LOG.info("CIF INIT");
 	}
 
